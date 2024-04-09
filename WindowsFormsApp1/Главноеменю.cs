@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
         public int volumecharacter = 50; // громкость персонажа
         public int volumesounds = 50; // громкость звуков
         private WaveOutEvent waveOut; // непосредственно инициализирует воспроизведение мелодию
-        public WaveOut waveOut2                              // 
+        public WaveOutEvent waveOut2;                              // 
         private AudioFileReader audioFileReader; // для считывания аудиофайла
         public Главноеменю()
         {
@@ -58,7 +58,7 @@ namespace WindowsFormsApp1
         private void Settings_Click(object sender, EventArgs e)
         {
             this.Hide(); // скрывает главное меню 
-            sett = new Настройки(volume);
+            sett = new Настройки(volume,volumecharacter,volumesounds);
             sett.MusicChanged += TrackChange;
             sett.SoundChanged += SoundChange;
             sett.VoiceChanged += VoiceChange;
@@ -102,7 +102,7 @@ namespace WindowsFormsApp1
                waveOut.Play();
 
                 waveOut2 = new WaveOutEvent();
-                AudioFileReader audioFileReader = new AudioFileReader("C:\\Users\\User\\Desktop\\Maxim_new_repos-master\\Maxim_new_repos-master\\WindowsFormsApp1\\Music\\MainMenu.mp3");
+                audioFileReader = new AudioFileReader("C:\\Users\\User\\Desktop\\Maxim_new_repos-master\\Maxim_new_repos-master\\WindowsFormsApp1\\Music\\MainMenu.mp3");
                 waveOut2.Init(audioFileReader); // передаётся конвертированная музыка в waveout
                 waveOut2.Volume = (float)volumesounds / 100f;
             }
