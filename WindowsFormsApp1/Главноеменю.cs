@@ -115,6 +115,7 @@ namespace WindowsFormsApp1
 
         private void button5_Click(object sender, EventArgs e) // выход из игры 
         {
+            waveOut2.Play();
             this.Close();
         }
     }
