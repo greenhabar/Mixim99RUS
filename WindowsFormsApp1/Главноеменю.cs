@@ -47,6 +47,7 @@ namespace WindowsFormsApp1
 
         private void Button1_Click(object sender, EventArgs e) // переход на форму запуска игры 
         {
+            waveOut2.Play();
             this.Hide();
             waveOut.Stop();
             game = new Игра(volume);
