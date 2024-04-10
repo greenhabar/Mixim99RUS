@@ -31,22 +31,11 @@ namespace WindowsFormsApp1
         public int volumecharacter = 50; // громкость персонажа
         public int volumesounds = 50; // громкость звуков
         private WaveOutEvent waveOut; // непосредственно инициализирует воспроизведение мелодию
-        public WaveOutEvent waveOut2;                              // 
-        private AudioFileReader audioFileReader; // для считывания аудиофайла
+        public WaveOutEvent waveOut2;
         public Главноеменю()
         {
             InitializeComponent();
         }
-
-        //private void Form1_Load(object sender, EventArgs e)
-        //{
-        //    // Загрузка изображения персонажа
-        //    Bitmap bitmap = new Bitmap("path_to_character_image.jpg");
-             
-        //    // Отображение изображения в PictureBox
-        //    pictureBox1.Image = bitmap;
-        //}
-
         private void Button1_Click(object sender, EventArgs e) // переход на форму запуска игры 
         {
             DoClick();
@@ -61,6 +50,7 @@ namespace WindowsFormsApp1
         private void Settings_Click(object sender, EventArgs e)
         {
             DoClick();
+            waveOut.Volume = (float)volume / 100f;
             this.Hide(); // скрывает главное меню 
             sett = new Настройки(volume,volumecharacter,volumesounds);
             sett.MusicChanged += TrackChange;
@@ -68,7 +58,7 @@ namespace WindowsFormsApp1
             sett.VoiceChanged += VoiceChange;
             sett.ShowDialog();
             this.Show();
-            
+            waveOut.Volume = (float)volume / 100f;
         }
         private void TrackChange(int Mus) // используем для отслеживания и изменения громесоти или подписка на изменения
         {
