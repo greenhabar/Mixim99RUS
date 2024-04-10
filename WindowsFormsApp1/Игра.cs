@@ -5,81 +5,147 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using NAudio;
-using NAudio.Wave;
 
-namespace GameForm
+namespace WindowsFormsApp1
 {
     public partial class Игра : Form
     {
-        List<Label> labels = new List<Label>();
-        private WaveOutEvent waveOut; // непосредственно инициализирует воспроизведение мелодию 
-        private AudioFileReader audioFileReader; // для считывания аудиофайла
+        int playerSpeed;
+        int moveCheck;
+        List<PictureBox> pictureBoxList;
+
         int volume;
-        public Игра(int volume)
+        int sound;
+        int character;
+
+
+        public Игра(int volume, int sound, int character)
         {
             InitializeComponent();
-            labels.Add(Introd1);
-            labels.Add(Introd2);
-            labels.Add(Introd3);
-            labels.Add(Introd4);
-            labels.Add(Introd5);
+            playerSpeed = 2;
+            Player.BringToFront();
+
             this.volume = volume;
-            MusicPlay();
-            button2.Hide();
-    }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            button1.Hide();
-            Thread thread;
-            foreach (Label label in labels)
-            {
-                thread = new Thread(new ParameterizedThreadStart(ShowTitle));
-                thread.Start(label);
-                thread.Join();
-            }
-            button2.Show();
-        }
-        private void ShowTitle(object o)
-        {
-            Label nowLab = (Label)o;
+            this.sound = sound;
+            this.character = character;
 
-            for(int i = 0; i<255; i++)
-            {
-                nowLab.ForeColor = Color.FromArgb(i,i,i);
-                Thread.Sleep(13);
-            }
-        }
-        private void MusicPlay()
-        {
-            if (waveOut == null)
-            {
-                waveOut = new WaveOutEvent();
-                AudioFileReader audioFileReader = new AudioFileReader("C:\\Users\\User\\Desktop\\Maxim_new_repos-master\\Maxim_new_repos-master\\WindowsFormsApp1\\Music\\Introduction.mp3");
-                waveOut.Init(audioFileReader); // передаётся конвертированная музыка в waveout
-                waveOut.Volume = (float)volume / 100f; // чтобы воспроизводил громкость по умолчанию 
-                // (1)waveOut.PlaybackStopped += (2)WaveOut_PlaybackStoppeed; - (1) событие остановки музыки (2) метод для повторного произведения
-                waveOut.Play();
-            }
-            else
-            {
-                waveOut.Play();
-            }
-
+            pictureBoxList = new List<PictureBox> { pictureBox1, pictureBox3 };
         }
 
-        private void FormClose(object sender, FormClosedEventArgs e)
+        private bool CheckCollision(PictureBox entity)
         {
-            waveOut.Stop();
-            waveOut.Dispose();
+            if (Player.Bounds.IntersectsWith(entity.Bounds))
+            {
+                return true;
+            }
+            return false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void UpMov_Tick(object sender, EventArgs e)
         {
-            this.Close();
+            foreach (PictureBox pictureBox in pictureBoxList)
+            {
+                if (CheckCollision(pictureBox))
+                {
+                    Player.Top += playerSpeed + 6;
+                    return;
+                }
+            }
+            if (Player.Top > 10)
+                Player.Top -= playerSpeed;
+        }
+
+        private void DownMov_Tick(object sender, EventArgs e)
+        {
+            foreach (PictureBox pictureBox in pictureBoxList)
+            {
+                if (CheckCollision(pictureBox))
+                {
+                    Player.Top -= playerSpeed + 6;
+                    return;
+                }
+            }
+            if (Player.Top < this.Top - 10)
+                Player.Top += playerSpeed;
+        }
+
+        private void RightMov_Tick(object sender, EventArgs e)
+        {
+            foreach (PictureBox pictureBox in pictureBoxList)
+            {
+                if (CheckCollision(pictureBox))
+                {
+                    Player.Left -= playerSpeed + 6;
+                    return;
+                }
+            }
+            if (Player.Left < 480)
+            {
+                Player.Left += playerSpeed;
+            }
+        }
+
+        private void LeftMov_Tick(object sender, EventArgs e)
+        {
+            foreach (PictureBox pictureBox in pictureBoxList)
+            {
+                if (CheckCollision(pictureBox))
+                {
+                    Player.Left += playerSpeed + 6;
+                    return;
+                }
+            }
+            if (Player.Left > 10)
+            {
+                Player.Left -= playerSpeed;
+            }
+        }
+
+        private void Игра_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (moveCheck != 0)
+                return;
+            if (e.KeyCode == Keys.Up)
+            {
+                if (Player.Image != Properties.Resources.IdleSisterBack)
+                    Player.Image = Properties.Resources.IdleSisterBack;
+                moveCheck = 1;
+                UpMov.Start();
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                if (Player.Image != Properties.Resources.IdleSisterFront)
+                    Player.Image = Properties.Resources.IdleSisterFront;
+                moveCheck = 2;
+                DownMov.Start();
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                if (Player.Image != Properties.Resources.IdleSisterRight)
+                    Player.Image = Properties.Resources.IdleSisterRight;
+                moveCheck = 3;
+                RightMov.Start();
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                if (Player.Image != Properties.Resources.IdleSisterLeft)
+                    Player.Image = Properties.Resources.IdleSisterLeft;
+                moveCheck = 4;
+                LeftMov.Start();
+            }
+        }
+
+        private void Игра_KeyUp(object sender, KeyEventArgs e)
+        {
+            //На стоячее положение изменять спрайт
+
+            moveCheck = 0;
+            UpMov.Stop();
+            RightMov.Stop();
+            LeftMov.Stop();
+            DownMov.Stop();
         }
     }
 }

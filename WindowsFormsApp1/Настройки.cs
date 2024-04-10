@@ -1,8 +1,10 @@
-﻿using System;
+﻿using NAudio.Wave;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,24 +14,13 @@ namespace WindowsFormsApp1
 {
     public partial class Настройки : Form
     {
-        int height;
-        int width;
-        List<int> resolution = new List<int> // Высота и ширина 
-        {
-            640,360,
-            1280, 720,
-            1920, 1080
-            
-        };
-        
+        public WaveOutEvent waveOut2;
         public event Action<int> MusicChanged;
         public event Action<int> SoundChanged;
         public event Action<int> VoiceChanged;
         public Настройки(int volume, int volumecharacter, int volumesounds)
         {
             InitializeComponent();
-            this.Height = height;
-            this.Width = width; // экран настроек был изначально в нужном положении
             trackBar5.Value = volume; // для того, чтобы не начинался с ноля
             trackBar3.Value = volumesounds;
             trackBar4.Value = volumecharacter;
@@ -37,15 +28,12 @@ namespace WindowsFormsApp1
 
         private void TabPage1_Click(object sender, EventArgs e)
         {
-
+            DoClick();
         }
-
-       
-
         
         private void tabPage2_Click(object sender, EventArgs e) // настройка звука
         {
-
+            DoClick();
         }
 
         private void trackBar4_Scroll(object sender, EventArgs e) // громкость персонажей
@@ -63,6 +51,7 @@ namespace WindowsFormsApp1
         }
         private void Button1_Click(object sender, EventArgs e) // кнопка возвращения в главное меню 
         {
+            DoClick();
             this.Hide();
             Главноеменю главноеменю = (Главноеменю)Application.OpenForms[0];
             главноеменю.Show();
@@ -82,6 +71,19 @@ namespace WindowsFormsApp1
         {
 
         }
+
+
+        private void DoClick()
+        {
+            byte[] audioBytesClick = Properties.Resources.ButtonClick;
+            MemoryStream audioStreamClick = new MemoryStream(audioBytesClick);
+            Mp3FileReader mp3FileReader = new Mp3FileReader(audioStreamClick);
+            waveOut2 = new WaveOutEvent();
+            waveOut2.Init(mp3FileReader);
+            waveOut2.Volume = (float)trackBar3.Value / 100f;
+            waveOut2.Play();
+        }
+
     }
 }
 

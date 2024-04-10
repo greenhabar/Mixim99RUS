@@ -5,8 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GameForm;
@@ -18,7 +20,7 @@ namespace WindowsFormsApp1
     public partial class Главноеменю : Form
     {
         Настройки sett;
-        Игра game;
+        Вступление game;
         
         
         //Запуск begin;
@@ -47,17 +49,18 @@ namespace WindowsFormsApp1
 
         private void Button1_Click(object sender, EventArgs e) // переход на форму запуска игры 
         {
-            waveOut2.Play();
+            DoClick();
             this.Hide();
             waveOut.Stop();
-            game = new Игра(volume);
+            game = new Вступление(volume,volumesounds,volumecharacter);
             game.ShowDialog();
-            waveOut.Play();
             this.Show();
+            waveOut.Play();
         }
 
         private void Settings_Click(object sender, EventArgs e)
         {
+            DoClick();
             this.Hide(); // скрывает главное меню 
             sett = new Настройки(volume,volumecharacter,volumesounds);
             sett.MusicChanged += TrackChange;
@@ -94,18 +97,21 @@ namespace WindowsFormsApp1
         {
             if (waveOut == null)
             {
-                waveOut = new WaveOutEvent();
-                AudioFileReader audioFileReader = new AudioFileReader("C:\\Users\\User\\Desktop\\Maxim_new_repos-master\\Maxim_new_repos-master\\WindowsFormsApp1\\Music\\MainMenu.mp3");
-                waveOut.Init(audioFileReader); // передаётся конвертированная музыка в waveout
-                waveOut.Volume = (float)volume / 100f; // чтобы воспроизводил громкость по умолчанию 
-                // (1)waveOut.PlaybackStopped += (2)WaveOut_PlaybackStoppeed; - (1) событие остановки музыки (2) метод для повторного произведения
-                
-               waveOut.Play();
+                //waveOut = new WaveOutEvent();
 
-                waveOut2 = new WaveOutEvent();
-                audioFileReader = new AudioFileReader("C:\\Users\\User\\Desktop\\Maxim_new_repos-master\\Maxim_new_repos-master\\WindowsFormsApp1\\Music\\MainMenu.mp3");
-                waveOut2.Init(audioFileReader); // передаётся конвертированная музыка в waveout
-                waveOut2.Volume = (float)volumesounds / 100f;
+                //------------------------
+
+                byte[] audioBytesMainMenu = Properties.Resources.MainMenu;
+                
+                MemoryStream audioStreamMainMenu = new MemoryStream(audioBytesMainMenu);
+                
+                Mp3FileReader mp3FileReader = new Mp3FileReader(audioStreamMainMenu);
+                waveOut = new WaveOutEvent();
+                waveOut.Init(mp3FileReader);
+
+                waveOut.Play();
+
+                waveOut.Volume =(float) volume / 100f;
             }
             else
             {
@@ -116,8 +122,31 @@ namespace WindowsFormsApp1
 
         private void button5_Click(object sender, EventArgs e) // выход из игры 
         {
-            waveOut2.Play();
+            DoClick();
+            Thread.Sleep(100);
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DoClick();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DoClick();
+        }
+
+        private void DoClick()
+        {
+            byte[] audioBytesClick = Properties.Resources.ButtonClick;
+            MemoryStream audioStreamClick = new MemoryStream(audioBytesClick);
+            Mp3FileReader mp3FileReader = new Mp3FileReader(audioStreamClick);
+            waveOut2 = new WaveOutEvent();
+            waveOut2.Init(mp3FileReader);
+            waveOut2.Volume = (float)volumesounds / 100f;
+            waveOut2.Play();
+        }
+
     }
 }
