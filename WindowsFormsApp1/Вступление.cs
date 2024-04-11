@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -23,6 +24,12 @@ namespace GameForm
         int sound;
         int character;
         Игра game;
+
+        byte[] audioBytesMainMenu = WindowsFormsApp1.Properties.Resources.Introduction;
+        MemoryStream audioStreamMainMenu;
+        Mp3FileReader mp3FileReader;
+
+
         public Вступление(int volume,int sound, int character)
         {
             InitializeComponent();
@@ -63,9 +70,12 @@ namespace GameForm
         {
             if (waveOut == null)
             {
+                audioStreamMainMenu = new MemoryStream(audioBytesMainMenu);
+
+                mp3FileReader = new Mp3FileReader(audioStreamMainMenu);
                 waveOut = new WaveOutEvent();
-                AudioFileReader audioFileReader = new AudioFileReader("C:\\Users\\User\\Desktop\\Maxim_new_repos-master\\Maxim_new_repos-master\\WindowsFormsApp1\\Music\\Introduction.mp3");
-                waveOut.Init(audioFileReader); // передаётся конвертированная музыка в waveout
+                waveOut.Init(mp3FileReader);
+
                 waveOut.Volume = (float)volume / 100f; // чтобы воспроизводил громкость по умолчанию 
                 // (1)waveOut.PlaybackStopped += (2)WaveOut_PlaybackStoppeed; - (1) событие остановки музыки (2) метод для повторного произведения
                 waveOut.Play();

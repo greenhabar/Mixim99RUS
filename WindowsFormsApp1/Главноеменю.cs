@@ -31,7 +31,12 @@ namespace WindowsFormsApp1
         public int volumecharacter = 50; // громкость персонажа
         public int volumesounds = 50; // громкость звуков
         private WaveOutEvent waveOut; // непосредственно инициализирует воспроизведение мелодию
-        public WaveOutEvent waveOut2;
+
+        byte[] audioBytesMainMenu = Properties.Resources.MainMenu;
+        MemoryStream audioStreamMainMenu;
+        Mp3FileReader mp3FileReader;
+
+
         public Главноеменю()
         {
             InitializeComponent();
@@ -50,14 +55,12 @@ namespace WindowsFormsApp1
         private void Settings_Click(object sender, EventArgs e)
         {
             DoClick();
-            waveOut.Volume = (float)volume / 100f;
             this.Hide(); // скрывает главное меню 
             sett = new Настройки(volume,volumecharacter,volumesounds);
             sett.MusicChanged += TrackChange;
-            sett.SoundChanged += SoundChange;
+            //sett.SoundChanged += SoundChange;
             sett.VoiceChanged += VoiceChange;
             sett.ShowDialog();
-            this.Show();
             waveOut.Volume = (float)volume / 100f;
         }
         private void TrackChange(int Mus) // используем для отслеживания и изменения громесоти или подписка на изменения
@@ -69,14 +72,14 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void SoundChange (int Sou)
-        {
-            volumesounds = Sou;
-            if (waveOut2 != null)
-            {
-                waveOut2.Volume = (float)volume / 100f;
-            }
-        }
+        //private void SoundChange (int Sou)
+        //{
+        //    volumesounds = Sou;
+        //    if (waveOut2 != null)
+        //    {
+        //        waveOut2.Volume = (float)volume / 100f;
+        //    }
+        //}
 
         private void VoiceChange (int Charac)
         {
@@ -91,11 +94,11 @@ namespace WindowsFormsApp1
 
                 //------------------------
 
-                byte[] audioBytesMainMenu = Properties.Resources.MainMenu;
                 
-                MemoryStream audioStreamMainMenu = new MemoryStream(audioBytesMainMenu);
                 
-                Mp3FileReader mp3FileReader = new Mp3FileReader(audioStreamMainMenu);
+                audioStreamMainMenu = new MemoryStream(audioBytesMainMenu);
+                
+                mp3FileReader = new Mp3FileReader(audioStreamMainMenu);
                 waveOut = new WaveOutEvent();
                 waveOut.Init(mp3FileReader);
 
@@ -129,13 +132,7 @@ namespace WindowsFormsApp1
 
         private void DoClick()
         {
-            byte[] audioBytesClick = Properties.Resources.ButtonClick;
-            MemoryStream audioStreamClick = new MemoryStream(audioBytesClick);
-            Mp3FileReader mp3FileReader = new Mp3FileReader(audioStreamClick);
-            waveOut2 = new WaveOutEvent();
-            waveOut2.Init(mp3FileReader);
-            waveOut2.Volume = (float)volumesounds / 100f;
-            waveOut2.Play();
+            
         }
 
     }
