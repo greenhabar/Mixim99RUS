@@ -20,7 +20,6 @@ namespace WindowsFormsApp1
         int sound;
         int character;
 
-
         public Игра(int volume, int sound, int character)
         {
             InitializeComponent();
@@ -30,8 +29,8 @@ namespace WindowsFormsApp1
             this.volume = volume;
             this.sound = sound;
             this.character = character;
-
-            pictureBoxList = new List<PictureBox> { pictureBox1, pictureBox3 };
+            pictureBoxList = new List<PictureBox> { new PictureBox() };
+            //pictureBoxList = new List<PictureBox> { pictureBox1, pictureBox3 };
         }
 
         private bool CheckCollision(PictureBox entity)
@@ -146,6 +145,11 @@ namespace WindowsFormsApp1
             RightMov.Stop();
             LeftMov.Stop();
             DownMov.Stop();
+        }
+
+        private void Player_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -21,33 +21,29 @@ namespace WindowsFormsApp1
         public Настройки(int volume, int volumecharacter, int volumesounds)
         {
             InitializeComponent();
-            trackBar5.Value = volume; // для того, чтобы не начинался с ноля
-            trackBar3.Value = volumesounds;
-            trackBar4.Value = volumecharacter;
+            MusicTrackBar.Value = volume;
+            SoundTrackBar.Value = volumesounds; // для того, чтобы не начинался с ноля
+            CharTrackBar.Value = volumecharacter;
         }
-
         private void TabPage1_Click(object sender, EventArgs e)
         {
             DoClick();
         }
-        
         private void tabPage2_Click(object sender, EventArgs e) // настройка звука
         {
             DoClick();
         }
-
         private void trackBar4_Scroll(object sender, EventArgs e) // громкость персонажей
         {
-            VoiceChanged?.Invoke(trackBar4.Value); 
+            VoiceChanged?.Invoke(CharTrackBar.Value); 
         }
-
-        private void trackBar3_Scroll(object sender, EventArgs e) // громкость звука 
+        private void trackBar3_Scroll(object sender, EventArgs e)// громкость музыки
         {
-            SoundChanged?.Invoke(trackBar3.Value);
+            MusicChanged?.Invoke(MusicTrackBar.Value);
         }
-        private void TrackBar5_Scroll(object sender, EventArgs e) // громкость музыки
+        private void TrackBar5_Scroll(object sender, EventArgs e) // громкость звука
         {
-            MusicChanged?.Invoke(trackBar5.Value); // Invoke - связующее между двумя процессами
+            SoundChanged?.Invoke(SoundTrackBar.Value); // Invoke - связующее между двумя процессами
         }
         private void Button1_Click(object sender, EventArgs e) // кнопка возвращения в главное меню 
         {
@@ -56,23 +52,18 @@ namespace WindowsFormsApp1
             Главноеменю главноеменю = (Главноеменю)Application.OpenForms[0];
             главноеменю.Show();
         }
-
         private void ResolutionDown_Click(object sender, EventArgs e)
         {
 
         }
-
         private void ResolutionUp_Click(object sender, EventArgs e)
         {
 
         }
-
         private void ScreenResolution_TextChanged(object sender, EventArgs e)
         {
 
         }
-
-
         private void DoClick()
         {
             byte[] audioBytesClick = Properties.Resources.ButtonClick;
@@ -80,7 +71,7 @@ namespace WindowsFormsApp1
             Mp3FileReader mp3FileReader = new Mp3FileReader(audioStreamClick);
             waveOut2 = new WaveOutEvent();
             waveOut2.Init(mp3FileReader);
-            waveOut2.Volume = (float)trackBar3.Value / 100f;
+            waveOut2.Volume = (float)MusicTrackBar.Value / 100f;
             waveOut2.Play();
         }
 
