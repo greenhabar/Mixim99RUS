@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Загрузка : Form
+    public partial class Loading : Form
     {
-        public Загрузка()
+        public Loading()
         {
             InitializeComponent();
         }

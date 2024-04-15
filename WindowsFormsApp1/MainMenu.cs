@@ -18,10 +18,10 @@ using NAudio.Wave;
 
 namespace WindowsFormsApp1
 {
-    public partial class Главноеменю : Form
+    public partial class MainMenu : Form
     {
-        Настройки sett;
-        Вступление game;
+        Settings sett;
+        introduction game;
         
         
         //Запуск begin;
@@ -37,7 +37,7 @@ namespace WindowsFormsApp1
 
 
 
-        public Главноеменю()
+        public MainMenu()
         {
             InitializeComponent();
         }
@@ -46,7 +46,7 @@ namespace WindowsFormsApp1
            // DoClick();
             this.Hide();
             waveOut.Stop();
-            game = new Вступление(volume,volumesounds,volumecharacter);
+            game = new introduction(volume,volumesounds,volumecharacter);
             game.ShowDialog();
             this.Show();
             waveOut.Play();
@@ -56,7 +56,7 @@ namespace WindowsFormsApp1
         {
             //DoClick();
             this.Hide(); // скрывает главное меню 
-            sett = new Настройки(volume, volumecharacter, volumesounds);
+            sett = new Settings(volume, volumecharacter, volumesounds);
             sett.MusicChanged += TrackChange;
             sett.SoundChanged += SoundChange;
             sett.VoiceChanged += VoiceChange;

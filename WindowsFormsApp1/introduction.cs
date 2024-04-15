@@ -15,7 +15,7 @@ using WindowsFormsApp1;
 
 namespace GameForm
 {
-    public partial class Вступление : Form
+    public partial class introduction : Form
     {
         List<Label> labels = new List<Label>();
         private WaveOutEvent waveOut; // непосредственно инициализирует воспроизведение мелодию 
@@ -23,14 +23,14 @@ namespace GameForm
         int volume;
         int sound;
         int character;
-        Игра game;
+        Game game;
 
         byte[] audioBytesMainMenu = WindowsFormsApp1.Properties.Resources.Introduction;
         MemoryStream audioStreamMainMenu;
         Mp3FileReader mp3FileReader;
 
 
-        public Вступление(int volume,int sound, int character)
+        public introduction(int volume,int sound, int character)
         {
             InitializeComponent();
             labels.Add(Introd1);
@@ -95,7 +95,7 @@ namespace GameForm
 
         private void button2_Click(object sender, EventArgs e)
         {
-            game = new Игра(volume,sound,character);
+            game = new Game(volume,sound,character);
             game.ShowDialog();
             this.Close();
         }

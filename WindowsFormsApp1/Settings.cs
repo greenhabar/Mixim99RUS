@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Настройки : Form
+    public partial class Settings : Form
     {
         public WaveOutEvent waveOut2;
         public event Action<int> MusicChanged;
         public event Action<int> SoundChanged;
         public event Action<int> VoiceChanged;
-        public Настройки(int volume, int volumecharacter, int volumesounds)
+        public Settings(int volume, int volumecharacter, int volumesounds)
         {
             InitializeComponent();
             MusicTrackBar.Value = volume;
@@ -49,7 +49,7 @@ namespace WindowsFormsApp1
         {
             DoClick();
             this.Hide();
-            Главноеменю главноеменю = (Главноеменю)Application.OpenForms[0];
+            MainMenu главноеменю = (MainMenu)Application.OpenForms[0];
             главноеменю.Show();
         }
         private void ResolutionDown_Click(object sender, EventArgs e)

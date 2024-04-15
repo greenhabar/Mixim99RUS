@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Паузаигры : Form
+    public partial class Pause : Form
     {
         //хахахаххаха
-        public Паузаигры()
+        public Pause()
         {
             InitializeComponent();
         }

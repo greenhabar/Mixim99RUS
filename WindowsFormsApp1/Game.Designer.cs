@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Игра
+    partial class Game
     {
         /// <summary>
         /// Required designer variable.

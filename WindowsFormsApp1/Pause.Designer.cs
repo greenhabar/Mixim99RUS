@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Паузаигры
+    partial class Pause
     {
         /// <summary>
         /// Required designer variable.
