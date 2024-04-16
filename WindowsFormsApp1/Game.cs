@@ -55,13 +55,8 @@ namespace WindowsFormsApp1
             }
             if (Player.Top > 10)
                 Player.Top -= playerSpeed;
-            
-            if (simple_event && Trigger(863,400))
-            {
-                simple_event = false;
-                MessageBox.Show("Произошло событие");
-                
-            }
+
+            SimpleEvents(863, 400);
         }
 
         private void DownMov_Tick(object sender, EventArgs e)
@@ -76,11 +71,7 @@ namespace WindowsFormsApp1
             }
             if (Player.Top < this.Top - 10)
                 Player.Top += playerSpeed;
-            if (simple_event && Trigger(863, 400))
-            {
-                simple_event = false;
-                MessageBox.Show("Произошло событие");
-            }
+            SimpleEvents(863, 400);
         }
 
         private void RightMov_Tick(object sender, EventArgs e)
@@ -97,11 +88,7 @@ namespace WindowsFormsApp1
             {
                 Player.Left += playerSpeed;
             }
-            if (simple_event && Trigger(863, 400))
-            {
-                simple_event = false;
-                MessageBox.Show("Произошло событие");
-            }
+            SimpleEvents(863, 400);
         }
 
         private void LeftMov_Tick(object sender, EventArgs e)
@@ -118,11 +105,7 @@ namespace WindowsFormsApp1
             {
                 Player.Left -= playerSpeed;
             }
-            if (simple_event && Trigger(863, 400))
-            {
-                simple_event = false;
-                MessageBox.Show("Произошло событие");
-            }
+            SimpleEvents(863, 400);
         }
 
         private void Игра_KeyDown(object sender, KeyEventArgs e)
@@ -179,6 +162,14 @@ namespace WindowsFormsApp1
             if (Player.Left > x - 20 && Player.Left <= x && Player.Top <= y && Player.Top > y - 20)
                 return true;
             return false;
+        }
+        private void SimpleEvents(int x, int y)
+        {
+            if (simple_event && Trigger(x, y))
+            {
+                simple_event = false;
+                MessageBox.Show("Произошло событие");
+            }
         }
     }
 }
