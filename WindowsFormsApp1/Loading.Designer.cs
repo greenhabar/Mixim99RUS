@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Загрузка
+    partial class Loading
     {
         /// <summary>
         /// Required designer variable.

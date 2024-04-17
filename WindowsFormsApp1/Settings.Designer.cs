@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Настройки
+    partial class Settings
     {
         /// <summary>
         /// Required designer variable.

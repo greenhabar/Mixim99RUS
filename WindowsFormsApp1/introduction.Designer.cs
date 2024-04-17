@@ -1,6 +1,6 @@
 ﻿namespace GameForm
 {
-    partial class Вступление
+    partial class introduction
     {
         /// <summary>
         /// Обязательная переменная конструктора.

@@ -77,61 +77,61 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="Игра.cs">
+    <Compile Include="Game.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Игра.Designer.cs">
-      <DependentUpon>Игра.cs</DependentUpon>
+    <Compile Include="Game.Designer.cs">
+      <DependentUpon>Game.cs</DependentUpon>
     </Compile>
-    <Compile Include="Вступление.cs">
+    <Compile Include="introduction.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Вступление.Designer.cs">
-      <DependentUpon>Вступление.cs</DependentUpon>
+    <Compile Include="introduction.Designer.cs">
+      <DependentUpon>introduction.cs</DependentUpon>
     </Compile>
-    <Compile Include="Настройки.cs">
+    <Compile Include="Settings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Настройки.Designer.cs">
-      <DependentUpon>Настройки.cs</DependentUpon>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Главноеменю.cs">
+    <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Главноеменю.Designer.cs">
-      <DependentUpon>Главноеменю.cs</DependentUpon>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Паузаигры.cs">
+    <Compile Include="Pause.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Паузаигры.Designer.cs">
-      <DependentUpon>Паузаигры.cs</DependentUpon>
+    <Compile Include="Pause.Designer.cs">
+      <DependentUpon>Pause.cs</DependentUpon>
     </Compile>
-    <Compile Include="Загрузка.cs">
+    <Compile Include="Loading.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Загрузка.Designer.cs">
-      <DependentUpon>Загрузка.cs</DependentUpon>
+    <Compile Include="Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Вступление.resx">
-      <DependentUpon>Вступление.cs</DependentUpon>
+    <EmbeddedResource Include="introduction.resx">
+      <DependentUpon>introduction.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Игра.resx">
-      <DependentUpon>Игра.cs</DependentUpon>
+    <EmbeddedResource Include="Game.resx">
+      <DependentUpon>Game.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Настройки.resx">
-      <DependentUpon>Настройки.cs</DependentUpon>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Главноеменю.resx">
-      <DependentUpon>Главноеменю.cs</DependentUpon>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Паузаигры.resx">
-      <DependentUpon>Паузаигры.cs</DependentUpon>
+    <EmbeddedResource Include="Pause.resx">
+      <DependentUpon>Pause.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Загрузка.resx">
-      <DependentUpon>Загрузка.cs</DependentUpon>
+    <EmbeddedResource Include="Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
