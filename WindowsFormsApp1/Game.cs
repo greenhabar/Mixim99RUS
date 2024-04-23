@@ -84,7 +84,7 @@ namespace WindowsFormsApp1
                     return;
                 }
             }
-            if (Player.Left < 480)
+            if (Player.Left < 1000)
             {
                 Player.Left += playerSpeed;
             }
@@ -110,6 +110,7 @@ namespace WindowsFormsApp1
 
         private void Игра_KeyDown(object sender, KeyEventArgs e)
         {
+            playerSpeed = 2;
             if (moveCheck != 0)
                 return;
             if (e.KeyCode == Keys.Up)
@@ -168,6 +169,7 @@ namespace WindowsFormsApp1
             if (simple_event && Trigger(x, y))
             {
                 simple_event = false;
+                playerSpeed = 0;
                 MessageBox.Show("Произошло событие");
             }
         }
