@@ -30,10 +30,9 @@ namespace WindowsFormsApp1
             this.volume = volume;
             this.sound = sound;
             this.character = character;
-            pictureBoxList = new List<PictureBox> { new PictureBox() };
+            pictureBoxList = new List<PictureBox> { pictureBox1 };
             //pictureBoxList = new List<PictureBox> { pictureBox1, pictureBox3 };
         }
-
         private bool CheckCollision(PictureBox entity)
         {
             if (Player.Bounds.IntersectsWith(entity.Bounds))
@@ -42,70 +41,73 @@ namespace WindowsFormsApp1
             }
             return false;
         }
-
         private void UpMov_Tick(object sender, EventArgs e)
         {
-            foreach (PictureBox pictureBox in pictureBoxList)
-            {
-                if (CheckCollision(pictureBox))
-                {
-                    Player.Top += playerSpeed + 6;
-                    return;
-                }
-            }
+
             if (Player.Top > 10)
                 Player.Top -= playerSpeed;
 
             SimpleEvents(863, 400);
+            foreach (PictureBox pictureBox in pictureBoxList)
+            {
+                if (CheckCollision(pictureBox))
+                {
+                    Player.Top += playerSpeed;
+                    return;
+                }
+            }
         }
 
         private void DownMov_Tick(object sender, EventArgs e)
         {
+            
+            if (Player.Top < this.Top - 10)
+                Player.Top += playerSpeed;
+            SimpleEvents(863, 400);
             foreach (PictureBox pictureBox in pictureBoxList)
             {
                 if (CheckCollision(pictureBox))
                 {
-                    Player.Top -= playerSpeed + 6;
+                    Player.Top -= playerSpeed;
                     return;
                 }
             }
-            if (Player.Top < this.Top - 10)
-                Player.Top += playerSpeed;
-            SimpleEvents(863, 400);
         }
 
         private void RightMov_Tick(object sender, EventArgs e)
         {
-            foreach (PictureBox pictureBox in pictureBoxList)
-            {
-                if (CheckCollision(pictureBox))
-                {
-                    Player.Left -= playerSpeed + 6;
-                    return;
-                }
-            }
+         
             if (Player.Left < 1000)
             {
                 Player.Left += playerSpeed;
             }
             SimpleEvents(863, 400);
-        }
-
-        private void LeftMov_Tick(object sender, EventArgs e)
-        {
             foreach (PictureBox pictureBox in pictureBoxList)
             {
                 if (CheckCollision(pictureBox))
                 {
-                    Player.Left += playerSpeed + 6;
+                    Player.Left -= playerSpeed;
                     return;
                 }
             }
+        }
+
+        private void LeftMov_Tick(object sender, EventArgs e)
+        {
+            
             if (Player.Left > 10)
             {
                 Player.Left -= playerSpeed;
             }
             SimpleEvents(863, 400);
+            foreach (PictureBox pictureBox in pictureBoxList)
+            {
+                if (CheckCollision(pictureBox))
+                {
+                    Player.Left += playerSpeed;
+                    return;
+                }
+            }
         }
 
         private void Игра_KeyDown(object sender, KeyEventArgs e)
@@ -152,11 +154,6 @@ namespace WindowsFormsApp1
             RightMov.Stop();
             LeftMov.Stop();
             DownMov.Stop();
-        }
-
-        private void Player_Click(object sender, EventArgs e)
-        {
-
         }
         private bool Trigger(int x, int y)
         {
