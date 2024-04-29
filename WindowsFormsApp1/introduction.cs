@@ -52,7 +52,7 @@ namespace GameForm
             {
                 thread = new Thread(new ParameterizedThreadStart(ShowTitle));
                 thread.Start(label);
-                thread.Join();
+                //thread.Join();
             }
             button2.Show();
         }

@@ -63,7 +63,7 @@
             // 
             this.Player.BackColor = System.Drawing.Color.Transparent;
             this.Player.Image = global::WindowsFormsApp1.Properties.Resources.IdleSisterFront;
-            this.Player.Location = new System.Drawing.Point(333, 170);
+            this.Player.Location = new System.Drawing.Point(585, 247);
             this.Player.Name = "Player";
             this.Player.Size = new System.Drawing.Size(100, 100);
             this.Player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -73,9 +73,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.TestBox;
-            this.pictureBox1.Location = new System.Drawing.Point(90, 83);
+            this.pictureBox1.Location = new System.Drawing.Point(334, 60);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(182, 253);
+            this.pictureBox1.Size = new System.Drawing.Size(583, 478);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -85,8 +86,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1264, 985);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Player);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "Game";
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Игра_KeyDown);

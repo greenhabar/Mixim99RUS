@@ -30,11 +30,16 @@ namespace WindowsFormsApp1
             this.volume = volume;
             this.sound = sound;
             this.character = character;
-            pictureBoxList = new List<PictureBox> { pictureBox1 };
+            pictureBoxList = new List<PictureBox> { new PictureBox() };
             //pictureBoxList = new List<PictureBox> { pictureBox1, pictureBox3 };
         }
         private bool CheckCollision(PictureBox entity)
         {
+            this.Text = $"Pl = {Player.Bottom}, PB = {pictureBox1.Bottom}";
+            if(!Player.Bounds.IntersectsWith(pictureBox1.Bounds) || Player.Top < pictureBox1.Top || Player.Right > pictureBox1.Right || Player.Bottom > pictureBox1.Bottom || Player.Left < pictureBox1.Left)
+            {
+                return true;
+            }
             if (Player.Bounds.IntersectsWith(entity.Bounds))
             {
                 return true;
@@ -61,7 +66,7 @@ namespace WindowsFormsApp1
         private void DownMov_Tick(object sender, EventArgs e)
         {
             
-            if (Player.Top < this.Top - 10)
+            if (Player.Top < 1000)
                 Player.Top += playerSpeed;
             SimpleEvents(863, 400);
             foreach (PictureBox pictureBox in pictureBoxList)
