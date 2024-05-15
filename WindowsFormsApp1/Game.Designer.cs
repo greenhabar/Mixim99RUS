@@ -63,7 +63,7 @@
             // 
             this.Player.BackColor = System.Drawing.Color.Transparent;
             this.Player.Image = global::WindowsFormsApp1.Properties.Resources.IdleSisterFront;
-            this.Player.Location = new System.Drawing.Point(585, 247);
+            this.Player.Location = new System.Drawing.Point(878, 423);
             this.Player.Name = "Player";
             this.Player.Size = new System.Drawing.Size(100, 100);
             this.Player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -73,9 +73,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.TestBox;
-            this.pictureBox1.Location = new System.Drawing.Point(334, 60);
+            this.pictureBox1.Location = new System.Drawing.Point(645, 307);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(583, 478);
+            this.pictureBox1.Size = new System.Drawing.Size(1011, 541);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -85,7 +85,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1264, 985);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.Player);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Game";

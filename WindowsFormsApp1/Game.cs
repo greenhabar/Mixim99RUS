@@ -21,6 +21,12 @@ namespace WindowsFormsApp1
         int character;
         bool simple_event = true;
 
+        void SetPictureToCenter()
+        {
+            pictureBox1.Left = (this.ClientSize.Width - pictureBox1.Width) / 2;
+            pictureBox1.Top = (this.ClientSize.Height - pictureBox1.Height) / 2;
+        }
+
         public Game(int volume, int sound, int character)
         {
             InitializeComponent();
@@ -31,6 +37,7 @@ namespace WindowsFormsApp1
             this.sound = sound;
             this.character = character;
             pictureBoxList = new List<PictureBox> { new PictureBox() };
+            SetPictureToCenter();
             //pictureBoxList = new List<PictureBox> { pictureBox1, pictureBox3 };
         }
         private bool CheckCollision(PictureBox entity)
