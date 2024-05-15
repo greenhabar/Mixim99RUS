@@ -50,6 +50,7 @@ namespace WindowsFormsApp1
             game.ShowDialog();
             this.Show();
             waveOut.Play();
+            
         }
 
         private void Settings_Click(object sender, EventArgs e)

@@ -25,6 +25,7 @@ namespace WindowsFormsApp1
         {
             pictureBox1.Left = (this.ClientSize.Width - pictureBox1.Width) / 2;
             pictureBox1.Top = (this.ClientSize.Height - pictureBox1.Height) / 2;
+            this.Text = pictureBox1.Left.ToString() + " " + pictureBox1.Top.ToString();
         }
 
         public Game(int volume, int sound, int character)
@@ -36,9 +37,10 @@ namespace WindowsFormsApp1
             this.volume = volume;
             this.sound = sound;
             this.character = character;
-            pictureBoxList = new List<PictureBox> { new PictureBox() };
+            pictureBoxList = new List<PictureBox> { pictureBox2, pictureBox3,pictureBox4,pictureBox5,pictureBox6 };
             SetPictureToCenter();
             //pictureBoxList = new List<PictureBox> { pictureBox1, pictureBox3 };
+            
         }
         private bool CheckCollision(PictureBox entity)
         {
@@ -171,6 +173,7 @@ namespace WindowsFormsApp1
         {
             if (Player.Left > x - 20 && Player.Left <= x && Player.Top <= y && Player.Top > y - 20)
                 return true;
+
             return false;
         }
         private void SimpleEvents(int x, int y)
