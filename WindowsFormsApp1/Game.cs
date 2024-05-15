@@ -56,7 +56,7 @@ namespace WindowsFormsApp1
         private void UpMov_Tick(object sender, EventArgs e)
         {
 
-            if (Player.Top > 10)
+            if (Player.Top > 0)
                 Player.Top -= playerSpeed;
 
             SimpleEvents(863, 400);
@@ -73,7 +73,7 @@ namespace WindowsFormsApp1
         private void DownMov_Tick(object sender, EventArgs e)
         {
             
-            if (Player.Top < 1000)
+            if (Player.Top < 1080)
                 Player.Top += playerSpeed;
             SimpleEvents(863, 400);
             foreach (PictureBox pictureBox in pictureBoxList)
@@ -89,7 +89,7 @@ namespace WindowsFormsApp1
         private void RightMov_Tick(object sender, EventArgs e)
         {
          
-            if (Player.Left < 1000)
+            if (Player.Left < 1920)
             {
                 Player.Left += playerSpeed;
             }
@@ -107,7 +107,7 @@ namespace WindowsFormsApp1
         private void LeftMov_Tick(object sender, EventArgs e)
         {
             
-            if (Player.Left > 10)
+            if (Player.Left > 0)
             {
                 Player.Left -= playerSpeed;
             }

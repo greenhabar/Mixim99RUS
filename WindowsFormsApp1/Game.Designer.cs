@@ -35,8 +35,10 @@
             this.LeftMov = new System.Windows.Forms.Timer(this.components);
             this.Player = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // UpMov
@@ -63,29 +65,38 @@
             // 
             this.Player.BackColor = System.Drawing.Color.Transparent;
             this.Player.Image = global::WindowsFormsApp1.Properties.Resources.IdleSisterFront;
-            this.Player.Location = new System.Drawing.Point(878, 423);
+            this.Player.Location = new System.Drawing.Point(1119, 446);
             this.Player.Name = "Player";
-            this.Player.Size = new System.Drawing.Size(100, 100);
+            this.Player.Size = new System.Drawing.Size(102, 110);
             this.Player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Player.TabIndex = 1;
             this.Player.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.TestBox;
-            this.pictureBox1.Location = new System.Drawing.Point(645, 307);
+            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.Kitchen;
+            this.pictureBox1.Location = new System.Drawing.Point(499, 29);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1011, 541);
+            this.pictureBox1.Size = new System.Drawing.Size(848, 768);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(573, 284);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(705, 50);
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
             // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Player);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Game";
@@ -94,6 +105,7 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Игра_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.Player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -106,5 +118,6 @@
         private System.Windows.Forms.Timer RightMov;
         private System.Windows.Forms.Timer LeftMov;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

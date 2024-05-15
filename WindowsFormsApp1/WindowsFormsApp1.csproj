@@ -161,6 +161,7 @@
     <Content Include="BackGrounds\backgroundmenu.png" />
     <Content Include="Music\Introduction.mp3" />
     <Content Include="Music\MainMenu.mp3" />
+    <None Include="Resources\Kitchen.jpg" />
     <None Include="Resources\TestBox.png" />
     <None Include="Resources\IdleSisterRight.gif" />
     <None Include="Resources\IdleSisterLeft.gif" />
