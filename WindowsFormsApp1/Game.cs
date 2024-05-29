@@ -23,10 +23,12 @@ namespace WindowsFormsApp1
 
         void SetPictureToCenter()
         {
-            pictureBox1.Left = (this.ClientSize.Width - pictureBox1.Width) / 2;
-            pictureBox1.Top = (this.ClientSize.Height - pictureBox1.Height) / 2;
-            this.Text = pictureBox1.Left.ToString() + " " + pictureBox1.Top.ToString();
+            Player.Left = (this.ClientSize.Width - Player.Width) / 2;
+            Player.Top = (this.ClientSize.Height - Player.Height) / 2;
+            this.Text = Player.Left.ToString() + " " + Player.Top.ToString();
         }
+
+
 
         public Game(int volume, int sound, int character)
         {
@@ -37,15 +39,20 @@ namespace WindowsFormsApp1
             this.volume = volume;
             this.sound = sound;
             this.character = character;
-            pictureBoxList = new List<PictureBox> { pictureBox2, pictureBox3,pictureBox4,pictureBox5,pictureBox6 };
-            SetPictureToCenter();
+            pictureBoxList = new List<PictureBox> {pictureBox1, pictureBox2, pictureBox3,pictureBox4,pictureBox5,pictureBox6,pictureBox8 };
+            //SetPictureToCenter();
             //pictureBoxList = new List<PictureBox> { pictureBox1, pictureBox3 };
+
             
+
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+
         }
         private bool CheckCollision(PictureBox entity)
         {
-            this.Text = $"Pl = {Player.Bottom}, PB = {pictureBox1.Bottom}";
-            if(!Player.Bounds.IntersectsWith(pictureBox1.Bounds) || Player.Top < pictureBox1.Top || Player.Right > pictureBox1.Right || Player.Bottom > pictureBox1.Bottom || Player.Left < pictureBox1.Left)
+            this.Text = $"Pl = {Player.Bottom}, PB = {Player.Bottom}";
+            if(!Player.Bounds.IntersectsWith(Player.Bounds) || Player.Top < Player.Top || Player.Right > Player.Right || Player.Bottom > Player.Bottom || Player.Left < Player.Left)
             {
                 return true;
             }
