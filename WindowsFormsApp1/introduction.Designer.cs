@@ -41,9 +41,9 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(1014, 517);
+            this.button1.Location = new System.Drawing.Point(1780, 978);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 40);
             this.button1.TabIndex = 11;
             this.button1.Text = " -->";
             this.button1.UseVisualStyleBackColor = false;
@@ -54,7 +54,7 @@
             this.Introd1.AutoSize = true;
             this.Introd1.Font = new System.Drawing.Font("Segoe Script", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Introd1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Introd1.Location = new System.Drawing.Point(227, 94);
+            this.Introd1.Location = new System.Drawing.Point(691, 304);
             this.Introd1.Name = "Introd1";
             this.Introd1.Size = new System.Drawing.Size(660, 30);
             this.Introd1.TabIndex = 12;
@@ -65,7 +65,7 @@
             this.Introd2.AutoSize = true;
             this.Introd2.Font = new System.Drawing.Font("Segoe Script", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Introd2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Introd2.Location = new System.Drawing.Point(62, 146);
+            this.Introd2.Location = new System.Drawing.Point(526, 356);
             this.Introd2.Name = "Introd2";
             this.Introd2.Size = new System.Drawing.Size(989, 30);
             this.Introd2.TabIndex = 13;
@@ -77,7 +77,7 @@
             this.Introd4.AutoSize = true;
             this.Introd4.Font = new System.Drawing.Font("Segoe Script", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Introd4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Introd4.Location = new System.Drawing.Point(270, 246);
+            this.Introd4.Location = new System.Drawing.Point(734, 456);
             this.Introd4.Name = "Introd4";
             this.Introd4.Size = new System.Drawing.Size(569, 30);
             this.Introd4.TabIndex = 14;
@@ -88,7 +88,7 @@
             this.Introd3.AutoSize = true;
             this.Introd3.Font = new System.Drawing.Font("Segoe Script", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Introd3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Introd3.Location = new System.Drawing.Point(43, 195);
+            this.Introd3.Location = new System.Drawing.Point(507, 405);
             this.Introd3.Name = "Introd3";
             this.Introd3.Size = new System.Drawing.Size(1032, 30);
             this.Introd3.TabIndex = 15;
@@ -100,7 +100,7 @@
             this.Introd5.AutoSize = true;
             this.Introd5.Font = new System.Drawing.Font("Segoe Script", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Introd5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Introd5.Location = new System.Drawing.Point(445, 407);
+            this.Introd5.Location = new System.Drawing.Point(909, 617);
             this.Introd5.Name = "Introd5";
             this.Introd5.Size = new System.Drawing.Size(243, 30);
             this.Introd5.TabIndex = 16;
@@ -110,20 +110,20 @@
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(1014, 517);
+            this.button2.Location = new System.Drawing.Point(1780, 978);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(100, 40);
             this.button2.TabIndex = 17;
             this.button2.Text = " -->";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Игра
+            // introduction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
-            this.ClientSize = new System.Drawing.Size(1101, 552);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Introd5);
             this.Controls.Add(this.Introd3);
@@ -132,7 +132,7 @@
             this.Controls.Add(this.Introd1);
             this.Controls.Add(this.button1);
             this.ForeColor = System.Drawing.SystemColors.Control;
-            this.Name = "Игра";
+            this.Name = "introduction";
             this.Text = "Form1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormClose);
             this.ResumeLayout(false);

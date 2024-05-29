@@ -43,7 +43,10 @@ namespace GameForm
             this.character = character;
             MusicPlay();
             button2.Hide();
-    }
+
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             button1.Hide();

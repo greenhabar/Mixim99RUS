@@ -101,12 +101,6 @@
     <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pause.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pause.Designer.cs">
-      <DependentUpon>Pause.cs</DependentUpon>
-    </Compile>
     <Compile Include="Loading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,9 +120,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pause.resx">
-      <DependentUpon>Pause.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Loading.resx">
       <DependentUpon>Loading.cs</DependentUpon>
@@ -161,6 +152,7 @@
     <Content Include="BackGrounds\backgroundmenu.png" />
     <Content Include="Music\Introduction.mp3" />
     <Content Include="Music\MainMenu.mp3" />
+    <None Include="Resources\Без имени%281%29.jpg" />
     <None Include="Resources\Empty.png" />
     <None Include="Resources\Kitchen.jpg" />
     <None Include="Resources\TestBox.png" />

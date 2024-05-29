@@ -40,6 +40,9 @@ namespace WindowsFormsApp1
         public MainMenu()
         {
             InitializeComponent();
+
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
         private void Button1_Click(object sender, EventArgs e) // переход на форму запуска игры 
         {
