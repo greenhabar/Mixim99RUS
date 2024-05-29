@@ -28,14 +28,9 @@ namespace WindowsFormsApp1
 
         //Introduction nt;
 
-        public int volume = 50; // громкость музыки
-        public int volumecharacter = 50; // громкость персонажа
-        public int volumesounds = 50; // громкость звуков
+        public int volume = 100; // громкость музыки
 
         private WaveOutEvent waveOut; // непосредственно инициализирует воспроизведение мелодию
-        private WaveOutEvent waveOut2; // непосредственно инициализирует воспроизведение мелодию
-
-
 
         public MainMenu()
         {
@@ -49,7 +44,7 @@ namespace WindowsFormsApp1
            // DoClick();
             this.Hide();
             waveOut.Stop();
-            game = new introduction(volume,volumesounds,volumecharacter);
+            game = new introduction(volume);
             game.ShowDialog();
             this.Show();
             waveOut.Play();
@@ -58,13 +53,21 @@ namespace WindowsFormsApp1
 
         private void Settings_Click(object sender, EventArgs e)
         {
-            //DoClick();
-            this.Hide(); // скрывает главное меню 
-            sett = new Settings(volume, volumecharacter, volumesounds);
-            sett.MusicChanged += TrackChange;
-            sett.SoundChanged += SoundChange;
-            sett.VoiceChanged += VoiceChange;
-            sett.ShowDialog();
+            if(volume == 100)
+            {
+                volume = 0;
+            }
+            else
+            {
+                volume = 100;
+            }
+
+            if (waveOut != null)
+            {
+                waveOut.Volume = (float)volume / 100f;
+            }
+
+
         }
         private void TrackChange(int Mus) // используем для отслеживания и изменения громесоти или подписка на изменения
         {
@@ -73,16 +76,6 @@ namespace WindowsFormsApp1
             {
                 waveOut.Volume = (float)volume / 100f;
             }
-        }
-
-        private void SoundChange(int Sou)
-        {
-            volumesounds = Sou;
-        }
-
-        private void VoiceChange (int Charac)
-        {
-            volumecharacter = Charac;
         }
 
         private void MusicPlay(object sender, EventArgs e)
@@ -121,22 +114,6 @@ namespace WindowsFormsApp1
         {
             //DoClick();
         }
-
-        //private void DoClick()
-        //{
-        //    byte[] mainmusicByte = Properties.Resources.ButtonClick;
-        //    MemoryStream memoryStream = new MemoryStream(mainmusicByte);
-        //    Mp3FileReader readerBase = new Mp3FileReader(memoryStream);
-
-        //    waveOut2 = new WaveOutEvent();
-        //    waveOut2.Init(readerBase);
-
-        //    waveOut2.PlaybackStopped += (s, args) =>
-        //    {
-        //        readerBase.Position = 0;
-        //    };
-        //    waveOut2.Play();
-        //}
 
     }
 }

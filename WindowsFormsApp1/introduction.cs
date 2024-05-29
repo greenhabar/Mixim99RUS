@@ -21,8 +21,6 @@ namespace GameForm
         private WaveOutEvent waveOut; // непосредственно инициализирует воспроизведение мелодию 
         private AudioFileReader audioFileReader; // для считывания аудиофайла
         int volume;
-        int sound;
-        int character;
         Game game;
 
         byte[] audioBytesMainMenu = WindowsFormsApp1.Properties.Resources.Introduction;
@@ -30,7 +28,7 @@ namespace GameForm
         Mp3FileReader mp3FileReader;
 
 
-        public introduction(int volume,int sound, int character)
+        public introduction(int volume)
         {
             InitializeComponent();
             labels.Add(Introd1);
@@ -39,8 +37,6 @@ namespace GameForm
             labels.Add(Introd4);
             labels.Add(Introd5);
             this.volume = volume;
-            this.sound = sound;
-            this.character = character;
             MusicPlay();
             button2.Hide();
 
@@ -98,7 +94,9 @@ namespace GameForm
 
         private void button2_Click(object sender, EventArgs e)
         {
-            game = new Game(volume,sound,character);
+            game = new Game(volume);
+            waveOut.Stop();
+            waveOut.Dispose();
             game.ShowDialog();
             this.Close();
         }

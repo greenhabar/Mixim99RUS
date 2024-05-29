@@ -12,33 +12,20 @@ namespace WindowsFormsApp1
 {
     public partial class Game : Form
     {
+        
         int playerSpeed;
         int moveCheck;
         List<PictureBox> pictureBoxList;
 
-        int volume;
-        int sound;
-        int character;
+        public int volume;
         bool simple_event = true;
-
-        void SetPictureToCenter()
-        {
-            Player.Left = (this.ClientSize.Width - Player.Width) / 2;
-            Player.Top = (this.ClientSize.Height - Player.Height) / 2;
-            this.Text = Player.Left.ToString() + " " + Player.Top.ToString();
-        }
-
-
-
-        public Game(int volume, int sound, int character)
+        public Game(int volume)
         {
             InitializeComponent();
             playerSpeed = 2;
             Player.BringToFront();
 
             this.volume = volume;
-            this.sound = sound;
-            this.character = character;
             pictureBoxList = new List<PictureBox> {pictureBox1, pictureBox2, pictureBox3,pictureBox4,pictureBox5,pictureBox6,pictureBox8 };
             //SetPictureToCenter();
             //pictureBoxList = new List<PictureBox> { pictureBox1, pictureBox3 };
@@ -84,7 +71,7 @@ namespace WindowsFormsApp1
             
             if (Player.Top < 1080)
                 Player.Top += playerSpeed;
-            SimpleEvents(863, 400);
+            SimpleEvents(600, 600);
             foreach (PictureBox pictureBox in pictureBoxList)
             {
                 if (CheckCollision(pictureBox))
@@ -136,6 +123,13 @@ namespace WindowsFormsApp1
             playerSpeed = 2;
             if (moveCheck != 0)
                 return;
+            if(e.KeyCode == Keys.Escape)
+            {
+                PauseMenu pauseMenu = new PauseMenu(this);
+                pauseMenu.MusicOnOff += TrackChange;
+                pauseMenu.ShowDialog();
+
+            }
             if (e.KeyCode == Keys.Up)
             {
                 if (Player.Image != Properties.Resources.IdleSisterBack)
@@ -191,6 +185,21 @@ namespace WindowsFormsApp1
                 playerSpeed = 0;
                 MessageBox.Show("Произошло событие");
             }
+        }
+        private void TrackChange(int a)
+        {
+            if(this.volume == 100)
+            {
+                volume = 0;
+                MessageBox.Show("Музыка Off!");
+            }
+            else
+            {
+                volume = 100;
+                MessageBox.Show("Музыка On!");
+            }
+
+
         }
     }
 }

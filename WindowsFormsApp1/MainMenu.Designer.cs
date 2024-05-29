@@ -84,7 +84,7 @@
             this.Settings.Name = "Settings";
             this.Settings.Size = new System.Drawing.Size(240, 80);
             this.Settings.TabIndex = 2;
-            this.Settings.Text = "Настройки игры";
+            this.Settings.Text = "Вкл/Выкл Звука";
             this.Settings.UseVisualStyleBackColor = true;
             this.Settings.Click += new System.EventHandler(this.Settings_Click);
             // 
