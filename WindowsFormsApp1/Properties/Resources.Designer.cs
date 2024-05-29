@@ -71,16 +71,6 @@ namespace WindowsFormsApp1.Properties {
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        internal static byte[] ButtonClick {
-            get {
-                object obj = ResourceManager.GetObject("ButtonClick", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Empty {
@@ -176,16 +166,6 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap TestBox {
             get {
                 object obj = ResourceManager.GetObject("TestBox", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Без_имени_1_ {
-            get {
-                object obj = ResourceManager.GetObject("Без имени(1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -95,12 +95,6 @@
     <Compile Include="introduction.Designer.cs">
       <DependentUpon>introduction.cs</DependentUpon>
     </Compile>
-    <Compile Include="Settings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Settings.Designer.cs">
-      <DependentUpon>Settings.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,9 +111,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PauseMenu.resx">
       <DependentUpon>PauseMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Settings.resx">
-      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
@@ -152,16 +143,14 @@
     <Content Include="BackGrounds\backgroundmenu.png" />
     <Content Include="Music\Introduction.mp3" />
     <Content Include="Music\MainMenu.mp3" />
-    <None Include="Resources\ImageForBackgroud.jpg" />
-    <None Include="Resources\Без имени%281%29.jpg" />
-    <None Include="Resources\Empty.png" />
     <None Include="Resources\Kitchen.jpg" />
+    <None Include="Resources\ImageForBackgroud.jpg" />
+    <None Include="Resources\Empty.png" />
     <None Include="Resources\TestBox.png" />
     <None Include="Resources\IdleSisterRight.gif" />
     <None Include="Resources\IdleSisterLeft.gif" />
     <None Include="Resources\IdleSisterFront.gif" />
     <None Include="Resources\IdleSisterBack.gif" />
-    <None Include="Resources\ButtonClick.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

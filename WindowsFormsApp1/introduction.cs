@@ -19,14 +19,12 @@ namespace GameForm
     {
         List<Label> labels = new List<Label>();
         private WaveOutEvent waveOut; // непосредственно инициализирует воспроизведение мелодию 
-        private AudioFileReader audioFileReader; // для считывания аудиофайла
         int volume;
         Game game;
 
         byte[] audioBytesMainMenu = WindowsFormsApp1.Properties.Resources.Introduction;
         MemoryStream audioStreamMainMenu;
         Mp3FileReader mp3FileReader;
-
 
         public introduction(int volume)
         {
@@ -51,7 +49,6 @@ namespace GameForm
             {
                 thread = new Thread(new ParameterizedThreadStart(ShowTitle));
                 thread.Start(label);
-                //thread.Join();
             }
             button2.Show();
         }
@@ -75,23 +72,17 @@ namespace GameForm
                 waveOut = new WaveOutEvent();
                 waveOut.Init(mp3FileReader);
 
-                waveOut.Volume = (float)volume / 100f; // чтобы воспроизводил громкость по умолчанию 
-                // (1)waveOut.PlaybackStopped += (2)WaveOut_PlaybackStoppeed; - (1) событие остановки музыки (2) метод для повторного произведения
+                waveOut.Volume = (float)volume / 100f;
                 waveOut.Play();
             }
             else
-            {
                 waveOut.Play();
-            }
-
         }
-
         private void FormClose(object sender, FormClosedEventArgs e)
         {
             waveOut.Stop();
             waveOut.Dispose();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             game = new Game(volume);

@@ -20,14 +20,7 @@ namespace WindowsFormsApp1
 {
     public partial class MainMenu : Form
     {
-        Settings sett;
         introduction game;
-        
-        
-        //Запуск begin;
-
-        //Introduction nt;
-
         public int volume = 100; // громкость музыки
 
         private WaveOutEvent waveOut; // непосредственно инициализирует воспроизведение мелодию
@@ -41,43 +34,22 @@ namespace WindowsFormsApp1
         }
         private void Button1_Click(object sender, EventArgs e) // переход на форму запуска игры 
         {
-           // DoClick();
             this.Hide();
             waveOut.Stop();
             game = new introduction(volume);
             game.ShowDialog();
             this.Show();
             waveOut.Play();
-            
         }
-
         private void Settings_Click(object sender, EventArgs e)
         {
             if(volume == 100)
-            {
                 volume = 0;
-            }
             else
-            {
                 volume = 100;
-            }
-
             if (waveOut != null)
-            {
                 waveOut.Volume = (float)volume / 100f;
-            }
-
-
         }
-        private void TrackChange(int Mus) // используем для отслеживания и изменения громесоти или подписка на изменения
-        {
-            volume = Mus;
-            if(waveOut != null)
-            {
-                waveOut.Volume = (float)volume / 100f;
-            }
-        }
-
         private void MusicPlay(object sender, EventArgs e)
         {
             if (waveOut == null)
@@ -92,27 +64,23 @@ namespace WindowsFormsApp1
                 waveOut.Play();
             }
             else
-            {
                 waveOut.Play();
-            }
-
         }
 
         private void button5_Click(object sender, EventArgs e) // выход из игры 
         {
-            //DoClick();
             Thread.Sleep(100);
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) //LoadGame
         {
-            //DoClick();
+            
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e) // Authors
         {
-            //DoClick();
+            
         }
 
     }

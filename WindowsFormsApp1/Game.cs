@@ -18,7 +18,6 @@ namespace WindowsFormsApp1
         List<PictureBox> pictureBoxList;
 
         public int volume;
-        bool simple_event = true;
         public Game(int volume)
         {
             InitializeComponent();
@@ -27,10 +26,6 @@ namespace WindowsFormsApp1
 
             this.volume = volume;
             pictureBoxList = new List<PictureBox> {pictureBox1, pictureBox2, pictureBox3,pictureBox4,pictureBox5,pictureBox6,pictureBox8 };
-            //SetPictureToCenter();
-            //pictureBoxList = new List<PictureBox> { pictureBox1, pictureBox3 };
-
-            
 
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -38,7 +33,6 @@ namespace WindowsFormsApp1
         }
         private bool CheckCollision(PictureBox entity)
         {
-            this.Text = $"Pl = {Player.Bottom}, PB = {Player.Bottom}";
             if(!Player.Bounds.IntersectsWith(Player.Bounds) || Player.Top < Player.Top || Player.Right > Player.Right || Player.Bottom > Player.Bottom || Player.Left < Player.Left)
             {
                 return true;
@@ -51,11 +45,8 @@ namespace WindowsFormsApp1
         }
         private void UpMov_Tick(object sender, EventArgs e)
         {
-
             if (Player.Top > 0)
                 Player.Top -= playerSpeed;
-
-            SimpleEvents(863, 400);
             foreach (PictureBox pictureBox in pictureBoxList)
             {
                 if (CheckCollision(pictureBox))
@@ -65,13 +56,10 @@ namespace WindowsFormsApp1
                 }
             }
         }
-
         private void DownMov_Tick(object sender, EventArgs e)
         {
-            
             if (Player.Top < 1080)
                 Player.Top += playerSpeed;
-            SimpleEvents(600, 600);
             foreach (PictureBox pictureBox in pictureBoxList)
             {
                 if (CheckCollision(pictureBox))
@@ -84,12 +72,8 @@ namespace WindowsFormsApp1
 
         private void RightMov_Tick(object sender, EventArgs e)
         {
-         
             if (Player.Left < 1920)
-            {
                 Player.Left += playerSpeed;
-            }
-            SimpleEvents(863, 400);
             foreach (PictureBox pictureBox in pictureBoxList)
             {
                 if (CheckCollision(pictureBox))
@@ -102,12 +86,8 @@ namespace WindowsFormsApp1
 
         private void LeftMov_Tick(object sender, EventArgs e)
         {
-            
             if (Player.Left > 0)
-            {
                 Player.Left -= playerSpeed;
-            }
-            SimpleEvents(863, 400);
             foreach (PictureBox pictureBox in pictureBoxList)
             {
                 if (CheckCollision(pictureBox))
@@ -128,7 +108,6 @@ namespace WindowsFormsApp1
                 PauseMenu pauseMenu = new PauseMenu(this);
                 pauseMenu.MusicOnOff += TrackChange;
                 pauseMenu.ShowDialog();
-
             }
             if (e.KeyCode == Keys.Up)
             {
@@ -162,29 +141,11 @@ namespace WindowsFormsApp1
 
         private void Игра_KeyUp(object sender, KeyEventArgs e)
         {
-            //На стоячее положение изменять спрайт
-
             moveCheck = 0;
             UpMov.Stop();
             RightMov.Stop();
             LeftMov.Stop();
             DownMov.Stop();
-        }
-        private bool Trigger(int x, int y)
-        {
-            if (Player.Left > x - 20 && Player.Left <= x && Player.Top <= y && Player.Top > y - 20)
-                return true;
-
-            return false;
-        }
-        private void SimpleEvents(int x, int y)
-        {
-            if (simple_event && Trigger(x, y))
-            {
-                simple_event = false;
-                playerSpeed = 0;
-                MessageBox.Show("Произошло событие");
-            }
         }
         private void TrackChange(int a)
         {
@@ -198,8 +159,6 @@ namespace WindowsFormsApp1
                 volume = 100;
                 MessageBox.Show("Музыка On!");
             }
-
-
         }
     }
 }

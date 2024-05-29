@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.UpMov = new System.Windows.Forms.Timer(this.components);
             this.DownMov = new System.Windows.Forms.Timer(this.components);
             this.RightMov = new System.Windows.Forms.Timer(this.components);
@@ -55,29 +56,29 @@
             // 
             // UpMov
             // 
-            this.UpMov.Interval = 10;
+            this.UpMov.Interval = 1;
             this.UpMov.Tick += new System.EventHandler(this.UpMov_Tick);
             // 
             // DownMov
             // 
-            this.DownMov.Interval = 10;
+            this.DownMov.Interval = 1;
             this.DownMov.Tick += new System.EventHandler(this.DownMov_Tick);
             // 
             // RightMov
             // 
-            this.RightMov.Interval = 10;
+            this.RightMov.Interval = 1;
             this.RightMov.Tick += new System.EventHandler(this.RightMov_Tick);
             // 
             // LeftMov
             // 
-            this.LeftMov.Interval = 10;
+            this.LeftMov.Interval = 1;
             this.LeftMov.Tick += new System.EventHandler(this.LeftMov_Tick);
             // 
             // Player
             // 
             this.Player.BackColor = System.Drawing.Color.Transparent;
             this.Player.Image = global::WindowsFormsApp1.Properties.Resources.IdleSisterFront;
-            this.Player.Location = new System.Drawing.Point(1228, 530);
+            this.Player.Location = new System.Drawing.Point(1196, 530);
             this.Player.Name = "Player";
             this.Player.Size = new System.Drawing.Size(108, 125);
             this.Player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -160,7 +161,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.Без_имени_1_;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.pictureBox8);

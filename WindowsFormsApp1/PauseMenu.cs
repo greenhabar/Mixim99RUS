@@ -22,25 +22,18 @@ namespace WindowsFormsApp1
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new Point(0, 0);
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             mother.Close();
             this.Close();
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             if(mother.volume == 100)
-            {
                 MusicOnOff?.Invoke(0);
-            }
             else
-            {
                 MusicOnOff?.Invoke(100);
-            }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
