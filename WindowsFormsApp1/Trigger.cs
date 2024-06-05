@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,10 @@ namespace WindowsFormsApp1
             this.pic = pic;
             this.type = type;
             this.path = path;
+            active = true;
+            pic.Image = Image.FromFile(path);
+            pic.Top = 700;
+            pic.Left = 1000;
         }
 
         public void ShowEvent()
@@ -26,15 +31,18 @@ namespace WindowsFormsApp1
             switch (type)
             {
                 case 1:
-                    Console.WriteLine("Смена локации");
+                    MessageBox.Show("Смена локации");
+                    active = false;
                     // вызов функции ReadJson()
                     break;
                 case 2:
-                    Console.WriteLine("Всплывает диалог");
+                    MessageBox.Show("Всплывает диалог");
+                    active = false;
                     // вызов функции ReadJson()
                     break;
                 case 3:
-                    Console.WriteLine("Всплывает картинка");
+                    MessageBox.Show("Всплывает картинка");
+                    active = false;
                     // вызов функции ReadJson()
                     break;
             }

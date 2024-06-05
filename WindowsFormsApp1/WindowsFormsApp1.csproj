@@ -103,6 +103,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Trigger.cs" />
     <EmbeddedResource Include="introduction.resx">
       <DependentUpon>introduction.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BackGrounds\backgroundmenu.png" />
+    <Content Include="Resources\c352b1b9801c11ee9607720ccb3e265f_upscaled.jpg" />
     <Content Include="Music\Introduction.mp3" />
     <Content Include="Music\MainMenu.mp3" />
     <None Include="Resources\Kitchen.jpg" />

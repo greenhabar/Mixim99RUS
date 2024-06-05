@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
         int playerSpeed;
         int moveCheck;
         List<PictureBox> pictureBoxList;
+        List<Trigger> triggerList;
 
         public int volume;
         public Game(int volume)
@@ -26,7 +27,7 @@ namespace WindowsFormsApp1
 
             this.volume = volume;
             pictureBoxList = new List<PictureBox> {pictureBox1, pictureBox2, pictureBox3,pictureBox4,pictureBox5,pictureBox6,pictureBox8 };
-
+            triggerList = new List<Trigger>() { new Trigger(pictureBox9, 3, "C:/Users/Viktor/source/repos/Mixim99RUS/WindowsFormsApp1/Resources/c352b1b9801c11ee9607720ccb3e265f_upscaled.jpg") };
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 
@@ -42,6 +43,16 @@ namespace WindowsFormsApp1
                 return true;
             }
             return false;
+        }
+        private void CheckCollisionTrigger()
+        {
+            foreach (Trigger tr in triggerList)
+            {
+                if (Player.Bounds.IntersectsWith(tr.pic.Bounds))
+                {
+                    tr.ShowEvent();
+                }
+            }
         }
         private void UpMov_Tick(object sender, EventArgs e)
         {
@@ -137,6 +148,10 @@ namespace WindowsFormsApp1
                 moveCheck = 4;
                 LeftMov.Start();
             }
+            if (e.KeyCode == Keys.Z)
+            {
+                CheckCollisionTrigger();
+            }
         }
 
         private void Игра_KeyUp(object sender, KeyEventArgs e)
@@ -160,5 +175,21 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Музыка On!");
             }
         }
+        private bool Trigger(int x, int y)
+        {
+            if (Player.Left > x - 20 && Player.Left <= x && Player.Top <= y && Player.Top > y - 20)
+                return true;
+            return false;
+        }
+        
+        //private void SimpleEvents(int x, int y)
+        //{
+        //    if (simple_event && Trigger(x, y))
+        //    {
+        //        simple_event = false;
+        //        playerSpeed = 0;
+        //        MessageBox.Show("Произошло событие");
+        //    }
+        //}
     }
 }
