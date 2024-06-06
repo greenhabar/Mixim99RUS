@@ -27,7 +27,9 @@ namespace WindowsFormsApp1
 
             this.volume = volume;
             pictureBoxList = new List<PictureBox> {pictureBox1, pictureBox2, pictureBox3,pictureBox4,pictureBox5,pictureBox6,pictureBox8 };
-            triggerList = new List<Trigger>() { new Trigger(pictureBox9, 3, "C:/Users/Viktor/source/repos/Mixim99RUS/WindowsFormsApp1/Resources/c352b1b9801c11ee9607720ccb3e265f_upscaled.jpg") };
+            triggerList = new List<Trigger>() { new Trigger(pictureBox9,
+                3, x: 1000, y: 700,
+                "C:/Users/Viktor/source/repos/Mixim99RUS/WindowsFormsApp1/Resources/c352b1b9801c11ee9607720ccb3e265f_upscaled.jpg") };
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 

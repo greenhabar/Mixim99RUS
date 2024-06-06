@@ -15,15 +15,15 @@ namespace WindowsFormsApp1
         public int type;
         public string path;
 
-        public Trigger(PictureBox pic, int type, string path)
+        public Trigger(PictureBox pic, int type, int x, int y, string path)
         {
             this.pic = pic;
             this.type = type;
             this.path = path;
             active = true;
             pic.Image = Image.FromFile(path);
-            pic.Top = 700;
-            pic.Left = 1000;
+            pic.Top = y;
+            pic.Left = x;
         }
 
         public void ShowEvent()
