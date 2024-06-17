@@ -16,6 +16,8 @@ namespace WindowsFormsApp1
         int playerSpeed;
         int moveCheck;
         List<PictureBox> pictureBoxList;
+        List<Triger> trigerList;//по нажатию
+        List<Triger> trigerList1;//по коорднате
 
         public int volume;
         public Game(int volume)
@@ -26,6 +28,8 @@ namespace WindowsFormsApp1
 
             this.volume = volume;
             pictureBoxList = new List<PictureBox> {pictureBox1, pictureBox2, pictureBox3,pictureBox4,pictureBox5,pictureBox6,pictureBox8 };
+            trigerList = new List<Triger> { new Triger(triger,1)};
+            trigerList1 = new List<Triger> { new Triger(triger2,2)};
 
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -41,7 +45,20 @@ namespace WindowsFormsApp1
             {
                 return true;
             }
+            CheckCollisionTrigger(trigerList1);
             return false;
+        }
+
+        private void CheckCollisionTrigger(List<Triger> Trigers)
+        {
+            foreach (Triger tr in Trigers)
+            {
+                if (Player.Bounds.IntersectsWith(tr.pic.Bounds))
+                {
+                    tr.ShowEvent();
+
+                }
+            }
         }
         private void UpMov_Tick(object sender, EventArgs e)
         {
@@ -136,6 +153,10 @@ namespace WindowsFormsApp1
                     Player.Image = Properties.Resources.IdleSisterLeft;
                 moveCheck = 4;
                 LeftMov.Start();
+            }
+            if(e.KeyCode == Keys.Z)
+            {
+                CheckCollisionTrigger(trigerList);
             }
         }
 

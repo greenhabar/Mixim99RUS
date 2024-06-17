@@ -43,6 +43,8 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.triger = new System.Windows.Forms.PictureBox();
+            this.triger2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -52,6 +54,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.triger)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.triger2)).BeginInit();
             this.SuspendLayout();
             // 
             // UpMov
@@ -78,7 +82,7 @@
             // 
             this.Player.BackColor = System.Drawing.Color.Transparent;
             this.Player.Image = global::WindowsFormsApp1.Properties.Resources.IdleSisterFront;
-            this.Player.Location = new System.Drawing.Point(1196, 530);
+            this.Player.Location = new System.Drawing.Point(1120, 540);
             this.Player.Name = "Player";
             this.Player.Size = new System.Drawing.Size(108, 125);
             this.Player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -143,18 +147,34 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Location = new System.Drawing.Point(1303, 119);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 405);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 398);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.Location = new System.Drawing.Point(1303, 661);
+            this.pictureBox8.Location = new System.Drawing.Point(1303, 665);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(100, 258);
+            this.pictureBox8.Size = new System.Drawing.Size(100, 254);
             this.pictureBox8.TabIndex = 8;
             this.pictureBox8.TabStop = false;
+            // 
+            // triger
+            // 
+            this.triger.Location = new System.Drawing.Point(1331, 580);
+            this.triger.Name = "triger";
+            this.triger.Size = new System.Drawing.Size(31, 50);
+            this.triger.TabIndex = 9;
+            this.triger.TabStop = false;
+            // 
+            // triger2
+            // 
+            this.triger2.Location = new System.Drawing.Point(754, 488);
+            this.triger2.Name = "triger2";
+            this.triger2.Size = new System.Drawing.Size(31, 50);
+            this.triger2.TabIndex = 10;
+            this.triger2.TabStop = false;
             // 
             // Game
             // 
@@ -164,6 +184,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.triger2);
+            this.Controls.Add(this.triger);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Player);
@@ -187,6 +209,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.triger)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.triger2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -205,5 +229,7 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox triger;
+        private System.Windows.Forms.PictureBox triger2;
     }
 }
