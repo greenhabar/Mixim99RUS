@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
-            this.UpMov = new System.Windows.Forms.Timer(this.components);
-            this.DownMov = new System.Windows.Forms.Timer(this.components);
-            this.RightMov = new System.Windows.Forms.Timer(this.components);
-            this.LeftMov = new System.Windows.Forms.Timer(this.components);
             this.Player = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -45,6 +41,7 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.triger = new System.Windows.Forms.PictureBox();
             this.triger2 = new System.Windows.Forms.PictureBox();
+            this.Timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -58,33 +55,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.triger2)).BeginInit();
             this.SuspendLayout();
             // 
-            // UpMov
-            // 
-            this.UpMov.Interval = 1;
-            this.UpMov.Tick += new System.EventHandler(this.UpMov_Tick);
-            // 
-            // DownMov
-            // 
-            this.DownMov.Interval = 1;
-            this.DownMov.Tick += new System.EventHandler(this.DownMov_Tick);
-            // 
-            // RightMov
-            // 
-            this.RightMov.Interval = 1;
-            this.RightMov.Tick += new System.EventHandler(this.RightMov_Tick);
-            // 
-            // LeftMov
-            // 
-            this.LeftMov.Interval = 1;
-            this.LeftMov.Tick += new System.EventHandler(this.LeftMov_Tick);
-            // 
             // Player
             // 
             this.Player.BackColor = System.Drawing.Color.Transparent;
-            this.Player.Image = global::WindowsFormsApp1.Properties.Resources.IdleSisterFront;
-            this.Player.Location = new System.Drawing.Point(1120, 540);
+            this.Player.Image = global::WindowsFormsApp1.Properties.Resources.PHIFront;
+            this.Player.Location = new System.Drawing.Point(1112, 582);
             this.Player.Name = "Player";
-            this.Player.Size = new System.Drawing.Size(108, 125);
+            this.Player.Size = new System.Drawing.Size(76, 105);
             this.Player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Player.TabIndex = 0;
             this.Player.TabStop = false;
@@ -176,6 +153,11 @@
             this.triger2.TabIndex = 10;
             this.triger2.TabStop = false;
             // 
+            // Timer
+            // 
+            this.Timer.Interval = 1;
+            this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,10 +198,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Timer UpMov;
-        private System.Windows.Forms.Timer DownMov;
-        private System.Windows.Forms.Timer RightMov;
-        private System.Windows.Forms.Timer LeftMov;
         private System.Windows.Forms.PictureBox Player;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -231,5 +209,6 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox triger;
         private System.Windows.Forms.PictureBox triger2;
+        private System.Windows.Forms.Timer Timer;
     }
 }

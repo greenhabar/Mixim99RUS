@@ -76,6 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MovementState.cs" />
     <Compile Include="PauseMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +101,7 @@
     <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlayerSprites.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Triger.cs" />
@@ -143,6 +145,42 @@
     <Content Include="BackGrounds\backgroundmenu.png" />
     <Content Include="Music\Introduction.mp3" />
     <Content Include="Music\MainMenu.mp3" />
+    <None Include="Resources\м3.gif" />
+    <None Include="Resources\SSUMove.gif" />
+    <None Include="Resources\SSRMove.gif" />
+    <None Include="Resources\SSLMove.gif" />
+    <None Include="Resources\SSDMove.gif" />
+    <None Include="Resources\SHLMove.gif" />
+    <None Include="Resources\SHDMove.gif" />
+    <None Include="Resources\PSUMove.gif" />
+    <None Include="Resources\PSRMove.gif" />
+    <None Include="Resources\PSLMove.gif" />
+    <None Include="Resources\PSIRight.gif" />
+    <None Include="Resources\PSIFront.gif" />
+    <None Include="Resources\PSIBack.png" />
+    <None Include="Resources\PSDMove.gif" />
+    <None Include="Resources\PHUMove.gif" />
+    <None Include="Resources\PHRMove.gif" />
+    <None Include="Resources\PHLMove.gif" />
+    <None Include="Resources\PHIFSigaret.gif" />
+    <None Include="Resources\PHIFront.gif" />
+    <None Include="Resources\PHIBack.png" />
+    <None Include="Resources\PHDMove.gif" />
+    <None Include="Resources\Ivanich.gif" />
+    <None Include="Resources\HDCat.png" />
+    <None Include="Resources\GFUMove.gif" />
+    <None Include="Resources\GFRMove.gif" />
+    <None Include="Resources\GFIRight.gif" />
+    <None Include="Resources\GFILeft.gif" />
+    <None Include="Resources\GFIFront.gif" />
+    <None Include="Resources\GFIBack.gif" />
+    <None Include="Resources\GFDMove.gif" />
+    <None Include="Resources\CmT6.png" />
+    <None Include="Resources\CmT5.png" />
+    <None Include="Resources\CMt4.png" />
+    <None Include="Resources\CmT3.png" />
+    <None Include="Resources\CmT2.png" />
+    <None Include="Resources\CmT1.png" />
     <None Include="Resources\Kitchen.jpg" />
     <None Include="Resources\ImageForBackgroud.jpg" />
     <None Include="Resources\Empty.png" />

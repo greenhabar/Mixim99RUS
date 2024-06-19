@@ -121,34 +121,136 @@
   <data name="Introduction" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Music\Introduction.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="IdleSisterRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IdleSisterRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="MainMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Music\MainMenu.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="TestBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TestBox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CmT1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CmT1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IdleSisterBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IdleSisterBack.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CmT2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CmT2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ImageForBackgroud" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ImageForBackgroud.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CmT3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CmT3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IdleSisterFront" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IdleSisterFront.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CMt4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CMt4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="backgroundmenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\BackGrounds\backgroundmenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CmT5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CmT5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IdleSisterLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IdleSisterLeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CmT6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CmT6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Empty" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Empty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GFDMove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GFDMove.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GFIBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GFIBack.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GFIFront" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GFIFront.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GFILeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GFILeft.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GFIRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GFIRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GFRMove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GFRMove.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GFUMove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GFUMove.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HDCat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HDCat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImageForBackgroud" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImageForBackgroud.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ivanich" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ivanich.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Kitchen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Kitchen.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PHDMove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PHDMove.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PHIBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PHIBack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PHIFront" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PHIFront.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PHIFSigaret" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PHIFSigaret.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PHLMove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PHLMove.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PHRMove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PHRMove.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PHUMove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PHUMove.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PSDMove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PSDMove.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PSIBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PSIBack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PSIFront" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PSIFront.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PSIRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PSIRight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PSLMove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PSLMove.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PSRMove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PSRMove.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PSUMove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PSUMove.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SHDMove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SHDMove.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SHLMove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SHLMove.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SSDMove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SSDMove.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SSLMove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SSLMove.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SSRMove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SSRMove.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SSUMove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SSUMove.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TestBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TestBox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SHIBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SHIBack.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SHIFront" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SHIFront.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SSIBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SSIBack.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SSIFront" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SSIFront.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
