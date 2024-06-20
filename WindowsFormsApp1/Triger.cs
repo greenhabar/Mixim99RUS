@@ -9,9 +9,9 @@ namespace WindowsFormsApp1
 {
     internal class Triger
     {
-        public PictureBox pic;
-        public bool active;
-        public int type;
+        public PictureBox pic; //get set
+        public bool active; // get set
+        public int type; // get set
         public string path;
 
         public Triger(PictureBox pic, int type)

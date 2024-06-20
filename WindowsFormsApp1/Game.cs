@@ -136,15 +136,13 @@ namespace WindowsFormsApp1
                     break;
                 
             }
-            Player.Image = playerSprites.GetCurrentMoveSprite(moveCheck);
+            Player.Image = playerSprites.GetCurrentSprite(moveCheck);
             Timer.Start();
         }
         private void Игра_KeyUp(object sender, KeyEventArgs e)
         {
-            Player.Image = playerSprites.GetCurrentIdleSprite(moveCheck);
             moveCheck = MovementState.None;
-
-
+            Player.Image = playerSprites.GetCurrentSprite(moveCheck);
         }
         //PauseInput Блок
         private void TrackChange(int a)

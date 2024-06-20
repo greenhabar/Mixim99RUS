@@ -18,28 +18,27 @@ namespace GameForm
     public partial class introduction : Form
     {
         List<Label> labels = new List<Label>();
-        private WaveOutEvent waveOut; // непосредственно инициализирует воспроизведение мелодию 
-        int volume;
         Game game;
-
-        byte[] audioBytesMainMenu = WindowsFormsApp1.Properties.Resources.Introduction;
-        MemoryStream audioStreamMainMenu;
-        Mp3FileReader mp3FileReader;
-
-        public introduction(int volume)
+        public introduction()
         {
             InitializeComponent();
+            InitializeWindow();
+            InitializeParams();
+        }
+        private void InitializeWindow()
+        {
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+        }
+        private void InitializeParams()
+        {
             labels.Add(Introd1);
             labels.Add(Introd2);
             labels.Add(Introd3);
             labels.Add(Introd4);
             labels.Add(Introd5);
-            this.volume = volume;
-            MusicPlay();
             button2.Hide();
-
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            GlobalVariables.player.Play(WindowsFormsApp1.Properties.Resources.Introduction1);
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -62,32 +61,10 @@ namespace GameForm
                 Thread.Sleep(13);
             }
         }
-        private void MusicPlay()
-        {
-            if (waveOut == null)
-            {
-                audioStreamMainMenu = new MemoryStream(audioBytesMainMenu);
-
-                mp3FileReader = new Mp3FileReader(audioStreamMainMenu);
-                waveOut = new WaveOutEvent();
-                waveOut.Init(mp3FileReader);
-
-                waveOut.Volume = (float)volume / 100f;
-                waveOut.Play();
-            }
-            else
-                waveOut.Play();
-        }
-        private void FormClose(object sender, FormClosedEventArgs e)
-        {
-            waveOut.Stop();
-            waveOut.Dispose();
-        }
         private void button2_Click(object sender, EventArgs e)
         {
-            game = new Game(volume);
-            waveOut.Stop();
-            waveOut.Dispose();
+            game = new Game(GlobalVariables.volume ? 1:0);
+            
             game.ShowDialog();
             this.Close();
         }

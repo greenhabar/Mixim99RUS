@@ -221,12 +221,11 @@ namespace WindowsFormsApp1.Properties {
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
         /// </summary>
-        internal static byte[] Introduction {
+        internal static System.IO.UnmanagedMemoryStream Introduction1 {
             get {
-                object obj = ResourceManager.GetObject("Introduction", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetStream("Introduction1", resourceCulture);
             }
         }
         
@@ -251,12 +250,11 @@ namespace WindowsFormsApp1.Properties {
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
         /// </summary>
-        internal static byte[] MainMenu {
+        internal static System.IO.UnmanagedMemoryStream MainMenu1 {
             get {
-                object obj = ResourceManager.GetObject("MainMenu", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetStream("MainMenu1", resourceCulture);
             }
         }
         
@@ -436,6 +434,26 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap SHLMove {
             get {
                 object obj = ResourceManager.GetObject("SHLMove", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SHRMove {
+            get {
+                object obj = ResourceManager.GetObject("SHRMove", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SHUMove {
+            get {
+                object obj = ResourceManager.GetObject("SHUMove", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

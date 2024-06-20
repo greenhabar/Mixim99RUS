@@ -53,8 +53,8 @@
             // 
             this.Introd1.AutoSize = true;
             this.Introd1.Font = new System.Drawing.Font("Segoe Script", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Introd1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Introd1.Location = new System.Drawing.Point(691, 304);
+            this.Introd1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Introd1.Location = new System.Drawing.Point(708, 326);
             this.Introd1.Name = "Introd1";
             this.Introd1.Size = new System.Drawing.Size(660, 30);
             this.Introd1.TabIndex = 12;
@@ -76,8 +76,8 @@
             // 
             this.Introd4.AutoSize = true;
             this.Introd4.Font = new System.Drawing.Font("Segoe Script", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Introd4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Introd4.Location = new System.Drawing.Point(734, 456);
+            this.Introd4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Introd4.Location = new System.Drawing.Point(734, 481);
             this.Introd4.Name = "Introd4";
             this.Introd4.Size = new System.Drawing.Size(569, 30);
             this.Introd4.TabIndex = 14;
@@ -87,7 +87,7 @@
             // 
             this.Introd3.AutoSize = true;
             this.Introd3.Font = new System.Drawing.Font("Segoe Script", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Introd3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Introd3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Introd3.Location = new System.Drawing.Point(507, 405);
             this.Introd3.Name = "Introd3";
             this.Introd3.Size = new System.Drawing.Size(1032, 30);
@@ -99,7 +99,7 @@
             // 
             this.Introd5.AutoSize = true;
             this.Introd5.Font = new System.Drawing.Font("Segoe Script", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Introd5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Introd5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Introd5.Location = new System.Drawing.Point(909, 617);
             this.Introd5.Name = "Introd5";
             this.Introd5.Size = new System.Drawing.Size(243, 30);
@@ -134,7 +134,6 @@
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.Name = "introduction";
             this.Text = "Form1";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormClose);
             this.ResumeLayout(false);
             this.PerformLayout();
 

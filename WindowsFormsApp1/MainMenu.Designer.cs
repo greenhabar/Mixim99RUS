@@ -105,7 +105,6 @@
             this.Name = "MainMenu";
             this.Text = "Меню";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.MusicPlay);
             this.ResumeLayout(false);
 
         }
