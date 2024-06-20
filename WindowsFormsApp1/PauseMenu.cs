@@ -14,11 +14,11 @@ namespace WindowsFormsApp1
     {
         Scene mother;
         public event Action<int> MusicOnOff;
-        public PauseMenu(Scene g )
+        public PauseMenu(Scene g)
         {
             InitializeComponent();
             this.mother = g;
-
+            this.StartPosition = FormStartPosition.Manual;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new Point(0, 0);
         }

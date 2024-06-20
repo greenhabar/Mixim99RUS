@@ -35,9 +35,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 12);
+            this.button2.Location = new System.Drawing.Point(12, 987);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 42);
+            this.button2.Size = new System.Drawing.Size(213, 42);
             this.button2.TabIndex = 1;
             this.button2.Text = "Выйти из игры";
             this.button2.UseVisualStyleBackColor = true;
@@ -45,9 +45,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 60);
+            this.button3.Location = new System.Drawing.Point(12, 12);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(102, 42);
+            this.button3.Size = new System.Drawing.Size(213, 75);
             this.button3.TabIndex = 2;
             this.button3.Text = "Выключить музыку";
             this.button3.UseVisualStyleBackColor = true;
@@ -55,11 +55,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 207);
+            this.button1.Location = new System.Drawing.Point(12, 93);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 42);
+            this.button1.Size = new System.Drawing.Size(213, 75);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Выйти из Меню";
+            this.button1.Text = "Выйти из Паузы";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -70,13 +70,12 @@
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.ImageForBackgroud;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(384, 1041);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Name = "PauseMenu";
             this.Text = "Form1";
-            
             this.ResumeLayout(false);
 
         }

@@ -56,6 +56,7 @@ namespace WindowsFormsApp1
         private void button5_Click(object sender, EventArgs e) // выход из игры 
         {
             Thread.Sleep(100);
+            GlobalVariables.player.Stop();
             this.Close();
         }
         private void button2_Click(object sender, EventArgs e) //LoadGame

@@ -40,7 +40,7 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(12, 561);
+            this.button1.Location = new System.Drawing.Point(12, 610);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(240, 80);
             this.button1.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 647);
+            this.button2.Location = new System.Drawing.Point(12, 696);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(240, 80);
             this.button2.TabIndex = 1;
@@ -60,9 +60,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(12, 989);
+            this.button4.Location = new System.Drawing.Point(12, 868);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(240, 40);
+            this.button4.Size = new System.Drawing.Size(240, 80);
             this.button4.TabIndex = 3;
             this.button4.Text = "Авторы";
             this.button4.UseVisualStyleBackColor = true;
@@ -70,7 +70,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(12, 819);
+            this.button5.Location = new System.Drawing.Point(12, 954);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(240, 80);
             this.button5.TabIndex = 4;
@@ -80,7 +80,7 @@
             // 
             // Settings
             // 
-            this.Settings.Location = new System.Drawing.Point(12, 733);
+            this.Settings.Location = new System.Drawing.Point(12, 782);
             this.Settings.Name = "Settings";
             this.Settings.Size = new System.Drawing.Size(240, 80);
             this.Settings.TabIndex = 2;
