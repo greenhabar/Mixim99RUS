@@ -20,7 +20,8 @@ namespace WindowsFormsApp1
 {
     public partial class MainMenu : Form
     {
-        introduction game;
+        introduction introduction;
+        Scene scene;
         public MainMenu()
         {
             InitializeComponent();
@@ -41,8 +42,10 @@ namespace WindowsFormsApp1
         private void Button1_Click(object sender, EventArgs e) // переход на форму запуска игры 
         {
             this.Hide();
-            game = new introduction();
-            game.ShowDialog();
+            introduction = new introduction();
+            introduction.ShowDialog();
+            scene = new Scene();
+            scene.ShowDialog();
             this.Show();
             GlobalVariables.player.Play(Properties.Resources.MainMenu1);
         }

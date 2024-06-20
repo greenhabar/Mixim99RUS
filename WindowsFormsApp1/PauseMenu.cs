@@ -12,9 +12,9 @@ namespace WindowsFormsApp1
 {
     public partial class PauseMenu : Form
     {
-        Game mother;
+        Scene mother;
         public event Action<int> MusicOnOff;
-        public PauseMenu(Game g )
+        public PauseMenu(Scene g )
         {
             InitializeComponent();
             this.mother = g;
@@ -29,10 +29,7 @@ namespace WindowsFormsApp1
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            if(mother.volume == 100)
-                MusicOnOff?.Invoke(0);
-            else
-                MusicOnOff?.Invoke(100);
+            MusicOnOff?.Invoke(1);
         }
         private void button1_Click(object sender, EventArgs e)
         {

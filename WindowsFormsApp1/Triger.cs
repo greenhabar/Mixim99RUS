@@ -12,17 +12,12 @@ namespace WindowsFormsApp1
         public PictureBox pic; //get set
         public bool active; // get set
         public int type; // get set
-        public string path;
 
         public Triger(PictureBox pic, int type)
         {
             this.pic = pic;
             this.type = type;
-            //this.path = path;
             active = true;
-            //pic.Image = Image.FromFile(path);
-            //pic.Top = 700;
-            //pic.Left = 1000;
         }
 
         public void ShowEvent()

@@ -11,7 +11,7 @@ using static WindowsFormsApp1.PlayerSprites;
 
 namespace WindowsFormsApp1
 {
-    public partial class Game : Form
+    public partial class Scene : Form
     {
         //Инициализатор Блок
         int playerSpeed;
@@ -19,14 +19,12 @@ namespace WindowsFormsApp1
         PlayerSprites playerSprites;
 
         List<PictureBox> pictureBoxList;
-        List<Triger> trigerList;//по нажатию
-        List<Triger> trigerList1;//по коорднате
+        List<Triger> TrigerInput;//по нажатию
+        List<Triger> TrigerCords;//по коорднате
 
-        //enum MovementState { None, Up, Down, Left, Right }
         MovementState moveCheck;
 
-        public int volume;
-        public Game(int volume)
+        public Scene()
         {
             InitializeComponent();
 
@@ -34,10 +32,9 @@ namespace WindowsFormsApp1
             Player.BringToFront();
             playerSprites = new PlayerSprites(0,0);
 
-            this.volume = volume;
             pictureBoxList = new List<PictureBox> {pictureBox1, pictureBox2,pictureBox3,pictureBox4,pictureBox5,pictureBox6,pictureBox8 };
-            trigerList = new List<Triger> { new Triger(triger,1)};
-            trigerList1 = new List<Triger> { new Triger(triger2,2)};
+            TrigerInput = new List<Triger> { new Triger(triger,1)};
+            TrigerCords = new List<Triger> { new Triger(triger2,2)};
 
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -47,7 +44,7 @@ namespace WindowsFormsApp1
         //Check Блок
         private bool CheckCollision(PictureBox entity)
         {
-            CheckCollisionTrigger(trigerList1);
+            CheckCollisionTrigger(TrigerCords);
             return Player.Bounds.IntersectsWith(entity.Bounds);
         }
         private void CheckCollisionTrigger(List<Triger> Trigers)
@@ -104,7 +101,6 @@ namespace WindowsFormsApp1
             MovePlayer(moveCheck);
         }
 
-
         //Input блок
         private void Игра_KeyDown(object sender, KeyEventArgs e)
         {
@@ -115,7 +111,7 @@ namespace WindowsFormsApp1
             switch (e.KeyCode)
             {
                 case Keys.Z:
-                    CheckCollisionTrigger(trigerList); 
+                    CheckCollisionTrigger(TrigerInput); 
                     break;
                 case Keys.Escape:
                     PauseMenu pauseMenu = new PauseMenu(this);
@@ -147,16 +143,7 @@ namespace WindowsFormsApp1
         //PauseInput Блок
         private void TrackChange(int a)
         {
-            if(this.volume == 100)
-            {
-                volume = 0;
-                MessageBox.Show("Музыка Off!");
-            }
-            else
-            {
-                volume = 100;
-                MessageBox.Show("Музыка On!");
-            }
+            GlobalVariables.player.ChangeVolume();
         }
     }
 }

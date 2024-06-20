@@ -18,7 +18,6 @@ namespace GameForm
     public partial class introduction : Form
     {
         List<Label> labels = new List<Label>();
-        Game game;
         public introduction()
         {
             InitializeComponent();
@@ -63,9 +62,6 @@ namespace GameForm
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            game = new Game(GlobalVariables.volume ? 1:0);
-            
-            game.ShowDialog();
             this.Close();
         }
     }

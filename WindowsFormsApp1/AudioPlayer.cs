@@ -36,8 +36,6 @@ namespace WindowsFormsApp1
         }
         static void WaveOut_PlaybackStopped(object sender, StoppedEventArgs e)
         {
-            Thread.Sleep(2000);
-
             reader.Position = 0;
             waveOut.Play();
         }
