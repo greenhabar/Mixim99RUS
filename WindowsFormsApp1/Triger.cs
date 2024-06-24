@@ -7,11 +7,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    internal class Triger
+    public class Triger
     {
         public PictureBox pic; //get set
         public bool active; // get set
         public int type; // get set
+        public string pathToInt;
 
         public Triger(PictureBox pic, int type)
         {

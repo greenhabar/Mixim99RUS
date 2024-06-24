@@ -13,15 +13,20 @@ namespace WindowsFormsApp1
 {
     public class AudioPlayer
     {
-        private static WaveOutEvent waveOut;
-        private static Mp3FileReader reader;
+        private WaveOutEvent waveOut;
+        private Mp3FileReader reader;
         private Thread musThread;
-        private static bool isPlaying = false;
+        private bool isPlaying = false;
+
         public AudioPlayer()
         {
             waveOut = new WaveOutEvent();
-
             musThread = new Thread(PlayThread);
+
+            reader = new Mp3FileReader(Properties.Resources.MainMenu1);
+            waveOut.Init(reader);
+
+            musThread.Start();
         }
 
         public void Play(System.IO.UnmanagedMemoryStream ms)
@@ -36,28 +41,57 @@ namespace WindowsFormsApp1
             musThread = new Thread(PlayThread);
             musThread.Start();
         }
+
         public void Stop()
         {
-            isPlaying=false;
-            musThread.Abort();
-            waveOut.Stop();
-            waveOut.Dispose();
+            isPlaying = false;
+            if (musThread != null)
+            {
+                musThread.Join();
+                musThread = null;
+            }
+            if (waveOut != null)
+            {
+                waveOut.Stop();
+                waveOut.Dispose();
+                waveOut = null;
+            }
+            if (reader != null)
+            {
+                reader.Dispose();
+                reader = null;
+            }
         }
-        static void WaveOut_PlaybackStopped(object sender, StoppedEventArgs e)
+
+        private void WaveOut_PlaybackStopped(object sender, StoppedEventArgs e)
         {
-            if(!isPlaying) { return; }
-            reader.Position = 0;
-            waveOut.Play();
+            if (!isPlaying) { return; }
+            if (reader != null)
+            {
+                reader.Position = 0;
+            }
+            if (waveOut != null)
+            {
+                waveOut.Play();
+            }
         }
+
         public void ChangeVolume()
         {
             GlobalVariables.volume = !GlobalVariables.volume;
-            waveOut.Volume = (GlobalVariables.volume ? 1 : 0);
+            if (waveOut != null)
+            {
+                waveOut.Volume = (GlobalVariables.volume ? 1 : 0);
+            }
         }
+
         private void PlayThread()
         {
-            waveOut.Play();
-            while(isPlaying) { }
+            if (waveOut != null)
+            {
+                waveOut.Play();
+                while (isPlaying) { }
+            }
         }
     }
 }

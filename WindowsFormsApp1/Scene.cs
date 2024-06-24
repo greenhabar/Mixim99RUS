@@ -19,9 +19,9 @@ namespace WindowsFormsApp1
 
         PlayerSprites playerSprites;
 
-        List<PictureBox> pictureBoxList;
-        List<Triger> TrigerInput;//по нажатию
-        List<Triger> TrigerCords;//по коорднате
+        public List<PictureBox> Colissions;
+        public List<Triger> TrigerInput;//по нажатию
+        public List<Triger> TrigerCords;//по коорднате
 
         MovementState moveCheck;
 
@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
             Player.BringToFront();
             playerSprites = new PlayerSprites(0,0);
 
-            pictureBoxList = new List<PictureBox> {pictureBox1, pictureBox2,pictureBox3,pictureBox4,pictureBox5,pictureBox6,pictureBox8 };
+            Colissions = new List<PictureBox> {pictureBox1, pictureBox2,pictureBox3,pictureBox4,pictureBox5,pictureBox6,pictureBox7,pictureBox8 }; //JSON done
             TrigerInput = new List<Triger> { new Triger(triger,1)};
             TrigerCords = new List<Triger> { new Triger(triger2,2)};
 
@@ -87,7 +87,7 @@ namespace WindowsFormsApp1
                     break;
             }
 
-            foreach (PictureBox pictureBox in pictureBoxList)
+            foreach (PictureBox pictureBox in Colissions)
             {
                 if (CheckCollision(pictureBox))
                 {
@@ -105,6 +105,7 @@ namespace WindowsFormsApp1
         //Input блок
         private void Игра_KeyDown(object sender, KeyEventArgs e)
         {
+            WorkWithJSON a = new WorkWithJSON();
             //playerSpeed = 2;
             if (moveCheck != MovementState.None)
                 return;
@@ -131,7 +132,13 @@ namespace WindowsFormsApp1
                 case Keys.Right:
                     moveCheck = MovementState.Right;
                     break;
-                
+                    case Keys.I:
+                    a.SaveData(this,"test");
+                    break;
+                case Keys.G:
+                    a.ReadScene(this, "test");
+                    break;
+
             }
             Player.Image = playerSprites.GetCurrentSprite(moveCheck);
             Timer.Start();
