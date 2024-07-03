@@ -20,6 +20,12 @@ namespace WindowsFormsApp1
             this.type = type;
             active = true;
         }
+        public Triger(PictureBox pic, int type,bool active)
+        {
+            this.pic = pic;
+            this.type = type;
+            this.active = active;
+        }
 
         public void ShowEvent()
         {

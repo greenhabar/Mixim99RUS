@@ -29,13 +29,22 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
 
-            playerSpeed = 2;
+            this.DoubleBuffered = true;
+
+            playerSpeed = 1;
             Player.BringToFront();
             playerSprites = new PlayerSprites(0,0);
 
-            Colissions = new List<PictureBox> {pictureBox1, pictureBox2,pictureBox3,pictureBox4,pictureBox5,pictureBox6,pictureBox7,pictureBox8 }; //JSON done
+            PictureBox pb = new PictureBox();
+            pb.Width = 100;
+            pb.Height = 398;
+            pb.Location = new System.Drawing.Point(1303, 119);
+
+            Colissions = new List<PictureBox> {pb, pictureBox2,pictureBox3,pictureBox4,pictureBox5,pictureBox6,pictureBox7,pictureBox8 }; //JSON done
             TrigerInput = new List<Triger> { new Triger(triger,1)};
             TrigerCords = new List<Triger> { new Triger(triger2,2)};
+
+            MessageBox.Show(name.Width.ToString() + ":" + name.Height.ToString() + ":" + name.Location.X.ToString() + ":" + name.Location.Y.ToString());
 
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

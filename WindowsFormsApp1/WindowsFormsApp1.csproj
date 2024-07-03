@@ -80,6 +80,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AudioPlayer.cs" />
+    <Compile Include="Scene2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scene2.designer.cs">
+      <DependentUpon>Scene2.cs</DependentUpon>
+    </Compile>
     <Compile Include="StaticVariables.cs" />
     <Compile Include="PauseMenu.cs">
       <SubType>Form</SubType>
@@ -132,6 +138,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Scene2.resx">
+      <DependentUpon>Scene2.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -149,6 +158,7 @@
   <ItemGroup>
     <Content Include="BackGrounds\backgroundmenu.png" />
     <Content Include="Music\Introduction.mp3" />
+    <None Include="Resources\BedroomPlayer.PNG" />
     <None Include="Music\Introduction.wav" />
     <Content Include="Music\MainMenu.mp3" />
     <None Include="Music\MainMenu.wav" />

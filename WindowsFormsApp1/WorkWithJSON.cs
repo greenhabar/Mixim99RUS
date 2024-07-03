@@ -31,6 +31,7 @@ namespace WindowsFormsApp1
                     ArrayName = "Colissions"
                 }) ;
             }
+            MessageBox.Show(pictureBoxesData[0].Name.ToString());
             foreach (Triger pb in form.TrigerCords)
             {
                 trigersCordsData.Add(new TrigerData());
@@ -65,10 +66,13 @@ namespace WindowsFormsApp1
                 trigersInputData[trigersInputData.Count - 1].type = pb.type;
                 trigersInputData[trigersInputData.Count - 1].pathToInt = pb.pathToInt;
             }
+
+            PictureBoxData Pl = new PictureBoxData();
+
             var CollisionData = new
             {
                 PictureBoxes = pictureBoxesData,
-                BackgroundImage = form.BackgroundImage != null ? form.BackgroundImage.Tag?.ToString() : null
+                BackgroundImage = form.BackgroundImage != null ? form.BackgroundImage.Tag?.ToString() : null,
             };
             var TrigersData = new
             {
@@ -91,7 +95,7 @@ namespace WindowsFormsApp1
             {
                 PictureBox pb = new PictureBox();
                 pb.Name = pictureBox.Name;
-                pb.Location = new System.Drawing.Point(pictureBox.LocationX, pictureBox.LocationY);
+                pb.Location = new System.Drawing.Point(Convert.ToInt32(pictureBox.LocationX), Convert.ToInt32(pictureBox.LocationY));
                 pb.Width = pictureBox.Width;
                 pb.Height = pictureBox.Height;
                 pb.ImageLocation = pictureBox.Image;
@@ -104,9 +108,9 @@ namespace WindowsFormsApp1
 
             foreach(var Trig in CollisionsData2.InputTrigers)
             {
-                Triger tr = new Triger(new PictureBox(), Trig.type);
+                Triger tr = new Triger(new PictureBox(), Convert.ToInt32(Trig.type), Convert.ToBoolean(Trig.active));
                 tr.pic.Name = Trig.PictureBoxData.Name;
-                tr.pic.Location = new System.Drawing.Point(Trig.PictureBoxData.LocationX, Trig.PictureBoxData.LocationY);
+                tr.pic.Location = new System.Drawing.Point(Convert.ToInt32(Trig.PictureBoxData.LocationX), Convert.ToInt32(Trig.PictureBoxData.LocationY));
                 tr.pic.Width = Trig.PictureBoxData.Width;
                 tr.pic.Height = Trig.PictureBoxData.Height;
                 tr.pic.ImageLocation = Trig.PictureBoxData.Image;
@@ -117,9 +121,9 @@ namespace WindowsFormsApp1
 
             foreach (var Trig in CollisionsData2.CordsTrigers)
             {
-                Triger tr = new Triger(new PictureBox(), Trig.type);
+                Triger tr = new Triger(new PictureBox(), Convert.ToInt32(Trig.type), Convert.ToBoolean(Trig.active));
                 tr.pic.Name = Trig.PictureBoxData.Name;
-                tr.pic.Location = new System.Drawing.Point(Trig.PictureBoxData.LocationX, Trig.PictureBoxData.LocationY);
+                tr.pic.Location = new System.Drawing.Point(Convert.ToInt32(Trig.PictureBoxData.LocationX), Convert.ToInt32(Trig.PictureBoxData.LocationY));
                 tr.pic.Width = Trig.PictureBoxData.Width;
                 tr.pic.Height = Trig.PictureBoxData.Height;
                 tr.pic.ImageLocation = Trig.PictureBoxData.Image;
@@ -137,7 +141,7 @@ namespace WindowsFormsApp1
             form.TrigerInput.Clear();
             foreach(Control control in form.Controls)
             {
-                if(control is PictureBox)
+                if(control is PictureBox && control.Name != "Player")
                 {
                     form.Controls.Remove(control);
                     control.Dispose();
