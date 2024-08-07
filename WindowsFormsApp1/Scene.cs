@@ -4,7 +4,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
+using System.IO;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,8 +20,12 @@ namespace WindowsFormsApp1
         //Инициализатор Блок
         int playerSpeed;
 
-        PlayerSprites playerSprites;
+        public string pathToImage;
 
+        public string BackGroundPath;
+
+        PlayerSprites playerSprites;
+        
         public List<PictureBox> Colissions;
         public List<Triger> TrigerInput;//по нажатию
         public List<Triger> TrigerCords;//по коорднате
@@ -28,27 +35,45 @@ namespace WindowsFormsApp1
         public Scene()
         {
             InitializeComponent();
+            InitializeForm();
+
+            MessageBox.Show(AppDomain.CurrentDomain.BaseDirectory);
+
+            MessageBox.Show(this.BackGroundPath);
+
+            //Debug
+
+            Colissions = new List<PictureBox> {Col4,Col2,Col3,Col4,Col5,Col6}; //JSON done
+            TrigerInput = new List<Triger> {new Triger(inputTriger1,1,true,"null")};
+            TrigerCords = new List<Triger> {};
+
+        }
+
+        public Scene(string path)
+        {
+            InitializeComponent();
+            InitializeForm();
+
+            GlobalVariables.WorkWithJSON.ReadScene(this, path);
+
+        }
+
+        void InitializeForm()
+        {
+            GlobalVariables.WorkWithJSON = new WorkWithJSON();
 
             this.DoubleBuffered = true;
 
             playerSpeed = 1;
             Player.BringToFront();
-            playerSprites = new PlayerSprites(0,0);
-
-            PictureBox pb = new PictureBox();
-            pb.Width = 100;
-            pb.Height = 398;
-            pb.Location = new System.Drawing.Point(1303, 119);
-
-            Colissions = new List<PictureBox> {pb, pictureBox2,pictureBox3,pictureBox4,pictureBox5,pictureBox6,pictureBox7,pictureBox8 }; //JSON done
-            TrigerInput = new List<Triger> { new Triger(triger,1)};
-            TrigerCords = new List<Triger> { new Triger(triger2,2)};
-
-            MessageBox.Show(name.Width.ToString() + ":" + name.Height.ToString() + ":" + name.Location.X.ToString() + ":" + name.Location.Y.ToString());
+            playerSprites = new PlayerSprites(0, 0);
 
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 
+
+            this.BackGroundPath = AppDomain.CurrentDomain.BaseDirectory + "Resources\\ToiletTest.jpg";
+            this.BackgroundImage = Image.FromFile(this.BackGroundPath);
         }
 
         //Check Блок
@@ -62,7 +87,10 @@ namespace WindowsFormsApp1
             foreach (Triger tr in Trigers)
             {
                 if (Player.Bounds.IntersectsWith(tr.pic.Bounds))
-                    tr.ShowEvent();
+                {
+                    tr.ShowEvent(this);
+                    break;
+                }
             }
         }
 
@@ -114,7 +142,6 @@ namespace WindowsFormsApp1
         //Input блок
         private void Игра_KeyDown(object sender, KeyEventArgs e)
         {
-            WorkWithJSON a = new WorkWithJSON();
             //playerSpeed = 2;
             if (moveCheck != MovementState.None)
                 return;
@@ -142,10 +169,10 @@ namespace WindowsFormsApp1
                     moveCheck = MovementState.Right;
                     break;
                     case Keys.I:
-                    a.SaveData(this,"test");
+                    GlobalVariables.WorkWithJSON.SaveData(this,"ToiletTest");
                     break;
                 case Keys.G:
-                    a.ReadScene(this, "test");
+                    GlobalVariables.WorkWithJSON.ReadScene(this, "ToiletTest");
                     break;
 
             }

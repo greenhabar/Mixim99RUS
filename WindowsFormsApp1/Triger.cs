@@ -20,14 +20,15 @@ namespace WindowsFormsApp1
             this.type = type;
             active = true;
         }
-        public Triger(PictureBox pic, int type,bool active)
+        public Triger(PictureBox pic, int type,bool active,string path)
         {
             this.pic = pic;
             this.type = type;
             this.active = active;
+            this.pathToInt = path;
         }
 
-        public void ShowEvent()
+        public void ShowEvent(Scene scene)
         {
             if(!active)
             {
@@ -37,7 +38,10 @@ namespace WindowsFormsApp1
             {
                 case 1:
                     MessageBox.Show("Смена локации");
-                    // вызов функции ReadJson()
+                    if(this.active)
+                    {
+                        GlobalVariables.WorkWithJSON.ReadScene(scene, pathToInt);
+                    }
                     break;
                 case 2:
                     active = false;

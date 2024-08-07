@@ -262,4 +262,22 @@
   <data name="BedroomPlayer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BedroomPlayer.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="HomeKitchen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HomeKitchen.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HallwayTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\Resources\HallwayTest.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KitchenTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KitchenTest.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaxRoomTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MaxRoomTest.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SisRoomTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SisRoomTest.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ToiletTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ToiletTest.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

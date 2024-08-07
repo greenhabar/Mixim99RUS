@@ -37,5 +37,6 @@ namespace WindowsFormsApp1
     {
         public static bool volume { get; set; }
         public static AudioPlayer player { get; set; }
+        public static WorkWithJSON WorkWithJSON { get; set; }
     }
 }

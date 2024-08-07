@@ -213,9 +213,29 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HallwayTest {
+            get {
+                object obj = ResourceManager.GetObject("HallwayTest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap HDCat {
             get {
                 object obj = ResourceManager.GetObject("HDCat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HomeKitchen {
+            get {
+                object obj = ResourceManager.GetObject("HomeKitchen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -260,11 +280,31 @@ namespace WindowsFormsApp1.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap KitchenTest {
+            get {
+                object obj = ResourceManager.GetObject("KitchenTest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream MainMenu1 {
             get {
                 return ResourceManager.GetStream("MainMenu1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MaxRoomTest {
+            get {
+                object obj = ResourceManager.GetObject("MaxRoomTest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -471,6 +511,16 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SisRoomTest {
+            get {
+                object obj = ResourceManager.GetObject("SisRoomTest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SSDMove {
             get {
                 object obj = ResourceManager.GetObject("SSDMove", resourceCulture);
@@ -534,6 +584,16 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap TestBox {
             get {
                 object obj = ResourceManager.GetObject("TestBox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ToiletTest {
+            get {
+                object obj = ResourceManager.GetObject("ToiletTest", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

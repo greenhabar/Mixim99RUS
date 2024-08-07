@@ -80,11 +80,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AudioPlayer.cs" />
-    <Compile Include="Scene2.cs">
+    <Compile Include="ShowPicture.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Scene2.designer.cs">
-      <DependentUpon>Scene2.cs</DependentUpon>
+    <Compile Include="ShowPicture.Designer.cs">
+      <DependentUpon>ShowPicture.cs</DependentUpon>
     </Compile>
     <Compile Include="StaticVariables.cs" />
     <Compile Include="PauseMenu.cs">
@@ -138,8 +138,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Scene2.resx">
-      <DependentUpon>Scene2.cs</DependentUpon>
+    <EmbeddedResource Include="ShowPicture.resx">
+      <DependentUpon>ShowPicture.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -157,7 +157,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BackGrounds\backgroundmenu.png" />
+    <None Include="bin\Debug\Resources\HallwayTest.jpg" />
     <Content Include="Music\Introduction.mp3" />
+    <None Include="Resources\ToiletTest.jpg" />
+    <None Include="Resources\SisRoomTest.jpg" />
+    <None Include="Resources\MaxRoomTest.jpg" />
+    <None Include="Resources\KitchenTest.jpg" />
+    <None Include="Resources\HomeKitchen.jpg" />
     <None Include="Resources\BedroomPlayer.PNG" />
     <None Include="Music\Introduction.wav" />
     <Content Include="Music\MainMenu.mp3" />
