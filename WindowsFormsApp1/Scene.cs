@@ -149,6 +149,7 @@ namespace WindowsFormsApp1
             switch (e.KeyCode)
             {
                 case Keys.Z:
+                    this.StopMovement();
                     CheckCollisionTrigger(TrigerInput); 
                     break;
                 case Keys.Escape:
@@ -181,9 +182,14 @@ namespace WindowsFormsApp1
         }
         private void Игра_KeyUp(object sender, KeyEventArgs e)
         {
+            this.StopMovement();
+        }
+        private void StopMovement()
+        {
             moveCheck = MovementState.None;
             Player.Image = playerSprites.GetCurrentSprite(moveCheck);
         }
+
         //PauseInput Блок
         private void TrackChange(int a)
         {

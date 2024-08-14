@@ -33,10 +33,15 @@ namespace WindowsFormsApp1
         Left, 
         Right 
     }
+    public class Resolution
+    {
+
+    }
     public static class GlobalVariables
     {
         public static bool volume { get; set; }
         public static AudioPlayer player { get; set; }
         public static WorkWithJSON WorkWithJSON { get; set; }
+        public static Resolution Resolution { get; set; }
     }
 }

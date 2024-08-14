@@ -53,6 +53,16 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Всплывает картинка");
                     // вызов функции ReadJson()
                     break;
+                case 4:
+                    active = false;
+                    MessageBox.Show("Выдача предмета");
+                    // вызов функции ReadJson()
+                    break;
+                case 5:
+                    active = false;
+                    MessageBox.Show("Забираем предмета");
+                    // вызов функции ReadJson()
+                    break;
             }
         }
     }
