@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
         public bool active; // get set
         public int type; // get set
         public string pathToInt;
+        public string item;
 
         public Triger(PictureBox pic, int type)
         {
@@ -37,33 +38,33 @@ namespace WindowsFormsApp1
             switch (type)
             {
                 case 1:
-                    MessageBox.Show("Смена локации");
-                    if(this.active)
-                    {
-                        GlobalVariables.WorkWithJSON.ReadScene(scene, pathToInt);
-                    }
+                    LoadScene(scene);
                     break;
                 case 2:
-                    active = false;
                     MessageBox.Show("Всплывает диалог");
                     // вызов функции ReadJson()
                     break;
                 case 3:
-                    active = false;
                     MessageBox.Show("Всплывает картинка");
                     // вызов функции ReadJson()
                     break;
                 case 4:
-                    active = false;
-                    MessageBox.Show("Выдача предмета");
-                    // вызов функции ReadJson()
+                    GiveItem();
                     break;
                 case 5:
                     active = false;
                     MessageBox.Show("Забираем предмета");
-                    // вызов функции ReadJson()
                     break;
             }
+        }
+        public void LoadScene(Scene scene)
+        {
+            GlobalVariables.WorkWithJSON.ReadScene(scene, pathToInt);
+        }
+        public void GiveItem()
+        {
+            active = false;
+            GlobalVariables.inventory.Add(item);
         }
     }
 }

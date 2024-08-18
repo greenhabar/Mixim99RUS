@@ -13,12 +13,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static WindowsFormsApp1.PlayerSprites;
 
+//Доработать спринт
+
+
 namespace WindowsFormsApp1
 {
     public partial class Scene : Form
     {
         //Инициализатор Блок
-        int playerSpeed;
 
         public string pathToImage;
 
@@ -64,7 +66,6 @@ namespace WindowsFormsApp1
 
             this.DoubleBuffered = true;
 
-            playerSpeed = 1;
             Player.BringToFront();
             playerSprites = new PlayerSprites(0, 0);
 
@@ -108,19 +109,30 @@ namespace WindowsFormsApp1
         }
         private void MovePlayer(MovementState direction)
         {
+
+            int totalSpeed;
+            if (GlobalVariables.sprint)
+            {
+                totalSpeed = GlobalVariables.speed + 2;
+            }
+            else
+            {
+                totalSpeed = GlobalVariables.speed;
+            }
+
             switch (direction)
             {
                 case MovementState.Up:
-                    if (Player.Top > 0) Player.Top -= playerSpeed;
+                    if (Player.Top > 0) Player.Top -= totalSpeed;
                     break;
                 case MovementState.Down:
-                    if (Player.Top < 1080) Player.Top += playerSpeed;
+                    if (Player.Top < 1080) Player.Top += totalSpeed;
                     break;
                 case MovementState.Left:
-                    if (Player.Left > 0) Player.Left -= playerSpeed;
+                    if (Player.Left > 0) Player.Left -= totalSpeed;
                     break;
                 case MovementState.Right:
-                    if (Player.Left < 1920) Player.Left += playerSpeed;
+                    if (Player.Left < 1920) Player.Left += totalSpeed;
                     break;
             }
 
@@ -168,6 +180,12 @@ namespace WindowsFormsApp1
                     break;
                 case Keys.Right:
                     moveCheck = MovementState.Right;
+                    break;
+                case Keys.X:
+                    if(GlobalVariables.sprint)
+                    {
+                        GlobalVariables.sprint = !GlobalVariables.sprint;
+                    }
                     break;
                     case Keys.I:
                     GlobalVariables.WorkWithJSON.SaveData(this,"ToiletTest");

@@ -38,6 +38,8 @@ namespace WindowsFormsApp1
             GlobalVariables.volume = true;
             GlobalVariables.player = new AudioPlayer();
             GlobalVariables.player.Play(Properties.Resources.MainMenu1);
+            GlobalVariables.speed = 2;
+            GlobalVariables.sprint = false;
         }
         private void Button1_Click(object sender, EventArgs e) // переход на форму запуска игры 
         {
