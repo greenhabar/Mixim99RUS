@@ -35,11 +35,13 @@ namespace WindowsFormsApp1
     }
     public static class GlobalVariables
     {
+        public static string task { get; set; } = " - ";
+        public static int locationId {  get; set; }
         public static int speed {  get; set; } 
-        public static bool sprint {  get; set; } 
         public static bool volume { get; set; }
         public static List<string> inventory { get; set; }
         public static AudioPlayer player { get; set; }
         public static WorkWithJSON WorkWithJSON { get; set; }
+        public static List<LocationData> locations { get; set; }
     }
 }

@@ -12,21 +12,47 @@ namespace WindowsFormsApp1
         public PictureBox pic; //get set
         public bool active; // get set
         public int type; // get set
-        public string pathToInt;
-        public string item;
+        public string Code;
 
+        /*
+            Кодификатор тригеров:
+        |(id действия)|(id локации)|(Тип Тригера)|(Название тригера)|(состояние (1 или 0))|
+
+
+            Типы тригеров:
+            Inp - по нажатию
+            Cor - по координате
+
+            Пример:
+
+            |1|Inp|InpTrig1|0
+
+            Таким образом мы на локации 1 изменяем состояние тригера 
+            по нажатию InpTrig1 на выставленное 0
+         */
+        /*
+         
+        == -
+
+         */
+        /*
+          Player
+          Col1,Col2...
+          TrigInp1,...
+          TrigCor1....
+         */
         public Triger(PictureBox pic, int type)
         {
             this.pic = pic;
             this.type = type;
             active = true;
         }
-        public Triger(PictureBox pic, int type,bool active,string path)
+        public Triger(PictureBox pic, int type,bool active,string Code)
         {
             this.pic = pic;
             this.type = type;
             this.active = active;
-            this.pathToInt = path;
+            this.Code = Code;
         }
 
         public void ShowEvent(Scene scene)
@@ -37,34 +63,53 @@ namespace WindowsFormsApp1
             }
             switch (type)
             {
-                case 1:
-                    LoadScene(scene);
+                case 1: //загрузка локи
+                    GlobalVariables.locationId = Convert.ToInt32(Code);
+                    GlobalVariables.WorkWithJSON.LoadLocation(scene, GlobalVariables.locationId);
                     break;
                 case 2:
                     MessageBox.Show("Всплывает диалог");
-                    // вызов функции ReadJson()
                     break;
                 case 3:
                     MessageBox.Show("Всплывает картинка");
-                    // вызов функции ReadJson()
                     break;
                 case 4:
-                    GiveItem();
-                    break;
-                case 5:
-                    active = false;
-                    MessageBox.Show("Забираем предмета");
+                    CodifyInteraction();
                     break;
             }
         }
-        public void LoadScene(Scene scene)
+        public void CodifyInteraction()
         {
-            GlobalVariables.WorkWithJSON.ReadScene(scene, pathToInt);
-        }
-        public void GiveItem()
-        {
-            active = false;
-            GlobalVariables.inventory.Add(item);
+            string[] result = Code.Trim('|').Split('|');
+
+            switch(result[0])
+            {
+                case "1":
+                    if (result[2] == "INP")
+                    {
+                        foreach (TrigerData data in GlobalVariables.locations[Convert.ToInt32(result[1])].TrigerInputs)
+                        {
+                            if(data.PictureBoxData.Name == result[3])
+                            {
+                                data.active = result[4] == "0" ? false : true;
+                                break;
+                            }
+                        }
+                        return;
+                    }
+                    else
+                    {
+                        foreach (TrigerData data in GlobalVariables.locations[Convert.ToInt32(result[1])].TrigerCords)
+                        {
+                            if (data.PictureBoxData.Name == result[3])
+                            {
+                                data.active = result[4] == "0" ? false : true;
+                                break;
+                            }
+                        }
+                    }
+                    break;
+            }
         }
     }
 }

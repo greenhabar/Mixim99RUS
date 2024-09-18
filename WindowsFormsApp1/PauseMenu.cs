@@ -18,21 +18,34 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             this.mother = g;
+            pictureBox2.SendToBack();
             this.StartPosition = FormStartPosition.Manual;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new Point(0, 0);
+
+            CurrentTask.Text = GlobalVariables.task;
+
         }
-        private void button2_Click(object sender, EventArgs e)
+
+        private void Resume_Click(object sender, EventArgs e)
         {
-            mother.Close();
             this.Close();
         }
-        private void button3_Click(object sender, EventArgs e)
+        private void MusicSwitch_Click(object sender, EventArgs e)
         {
             MusicOnOff?.Invoke(1);
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void Load_Click(object sender, EventArgs e)
         {
+
+        }
+        private void Save_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            mother.Close();
             this.Close();
         }
     }

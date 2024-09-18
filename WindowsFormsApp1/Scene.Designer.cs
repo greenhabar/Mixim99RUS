@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.Player = new System.Windows.Forms.PictureBox();
             this.Col1 = new System.Windows.Forms.PictureBox();
-            this.Timer = new System.Windows.Forms.Timer(this.components);
             this.Col4 = new System.Windows.Forms.PictureBox();
             this.Col2 = new System.Windows.Forms.PictureBox();
             this.Col3 = new System.Windows.Forms.PictureBox();
@@ -40,6 +39,7 @@
             this.Col6 = new System.Windows.Forms.PictureBox();
             this.inputTriger1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.MovementTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Col1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Col4)).BeginInit();
@@ -70,11 +70,6 @@
             this.Col1.Size = new System.Drawing.Size(100, 50);
             this.Col1.TabIndex = 1;
             this.Col1.TabStop = false;
-            // 
-            // Timer
-            // 
-            this.Timer.Interval = 1;
-            this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // Col4
             // 
@@ -133,7 +128,7 @@
             // inputTriger1
             // 
             this.inputTriger1.BackColor = System.Drawing.Color.Transparent;
-            this.inputTriger1.Location = new System.Drawing.Point(1327, 593);
+            this.inputTriger1.Location = new System.Drawing.Point(1318, 590);
             this.inputTriger1.Name = "inputTriger1";
             this.inputTriger1.Size = new System.Drawing.Size(31, 50);
             this.inputTriger1.TabIndex = 8;
@@ -147,6 +142,11 @@
             this.pictureBox2.Size = new System.Drawing.Size(30, 161);
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
+            // 
+            // MovementTimer
+            // 
+            this.MovementTimer.Interval = 1;
+            this.MovementTimer.Tick += new System.EventHandler(this.MovementTimer_Tick);
             // 
             // Scene
             // 
@@ -188,7 +188,6 @@
         #endregion
         private System.Windows.Forms.PictureBox Player;
         private System.Windows.Forms.PictureBox Col1;
-        private System.Windows.Forms.Timer Timer;
         private System.Windows.Forms.PictureBox Col4;
         private System.Windows.Forms.PictureBox Col2;
         private System.Windows.Forms.PictureBox Col3;
@@ -197,5 +196,6 @@
         private System.Windows.Forms.PictureBox Col6;
         private System.Windows.Forms.PictureBox inputTriger1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Timer MovementTimer;
     }
 }
