@@ -17,6 +17,10 @@ namespace WindowsFormsApp1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainMenu());
+
+            //Application.Run(new Dialog());
+
+            //Application.Run(new SelectForm("C:\\Users\\User\\3D Objects\\ProjectUtilities\\SelectionGenerator\\WinFormsApp1\\bin\\Debug\\net7.0-windows\\TEST.json"));
         }
     }
 }

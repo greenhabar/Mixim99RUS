@@ -328,6 +328,8 @@ namespace WindowsFormsApp1
 
             form.BackgroundImage = Image.FromFile(Convert.ToString(GlobalVariables.locations[index].BackGround));
             GlobalVariables.locationId = index;
+
+            GlobalVariables.player.Play(GlobalVariables.locations[index].AudioPath);
         }
 
         //public void DEBUG_Save(Scene form, string FileName)
@@ -419,7 +421,7 @@ namespace WindowsFormsApp1
         public List<PictureBoxData> Colissions { get; set; }
         public List<TrigerData> TrigerCords { get; set; }
         public List<TrigerData> TrigerInputs { get; set; }
-
+        public string AudioPath { get; set; }
     }
     public class PictureBoxData
     {

@@ -51,6 +51,8 @@ namespace WindowsFormsApp1
         void InitializeForm()
         {
             GlobalVariables.WorkWithJSON = new WorkWithJSON();
+            GlobalVariables.dialogForm = new Dialog();
+            GlobalVariables.selectForm = new SelectForm();
 
             this.DoubleBuffered = true;
 

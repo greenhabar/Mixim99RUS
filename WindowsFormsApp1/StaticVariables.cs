@@ -43,5 +43,10 @@ namespace WindowsFormsApp1
         public static AudioPlayer player { get; set; }
         public static WorkWithJSON WorkWithJSON { get; set; }
         public static List<LocationData> locations { get; set; }
+        public static Dialog dialogForm { get; set; }
+        public static SelectForm selectForm { get; set; }
+        public static int reputation { get; set; } = 0;
+
+        public static string Temp { get; set; } = "NULL";
     }
 }

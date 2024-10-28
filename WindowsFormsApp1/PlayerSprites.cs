@@ -84,9 +84,7 @@ namespace WindowsFormsApp1
                 }
             };
         }
-
         //Get'ер Блок
-        
         public System.Drawing.Bitmap GetCurrentSprite(MovementState mv)
         {
             SpriteState state = SpriteState.IdleFront;

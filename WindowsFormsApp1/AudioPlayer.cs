@@ -11,6 +11,8 @@ using NAudio.Wave;
 
 namespace WindowsFormsApp1
 {
+    //Оно работает, но некрасивое(( 
+
     public class AudioPlayer
     {
         private WaveOutEvent waveOut;
@@ -29,10 +31,10 @@ namespace WindowsFormsApp1
             musThread.Start();
         }
 
-        public void Play(System.IO.UnmanagedMemoryStream ms)
+        public void Play(string path)
         {
             Stop();
-            reader = new Mp3FileReader(ms);
+            reader = new Mp3FileReader(path);
             waveOut = new WaveOutEvent();
             waveOut.Init(reader);
             waveOut.PlaybackStopped += WaveOut_PlaybackStopped;

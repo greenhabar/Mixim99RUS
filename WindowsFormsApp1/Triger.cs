@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +16,12 @@ namespace WindowsFormsApp1
         public int type; // get set
         public string Code;
 
+        /*
+         
+            id Действий:
+            1 - ИзменениеСостоянияТригера
+            2 - ЗагрузкаДиалога
+         */
         /*
             Кодификатор тригеров:
         |(id действия)|(id локации)|(Тип Тригера)|(Название тригера)|(состояние (1 или 0))|
@@ -41,6 +49,13 @@ namespace WindowsFormsApp1
           TrigInp1,...
           TrigCor1....
          */
+        /*
+         * 
+         * Кодификатор диалога:
+         * |id Действия|ПутьДоФайлаДиалога|ПутьДоФайлаСВыбором
+         * 
+         */
+        //DELETE
         public Triger(PictureBox pic, int type)
         {
             this.pic = pic;
@@ -54,7 +69,6 @@ namespace WindowsFormsApp1
             this.active = active;
             this.Code = Code;
         }
-
         public void ShowEvent(Scene scene)
         {
             if(!active)
@@ -63,17 +77,18 @@ namespace WindowsFormsApp1
             }
             switch (type)
             {
+                //Переделать под кодификатор
                 case 1: //загрузка локи
                     GlobalVariables.locationId = Convert.ToInt32(Code);
                     GlobalVariables.WorkWithJSON.LoadLocation(scene, GlobalVariables.locationId);
                     break;
+                //case 2:
+                //    MessageBox.Show("Всплывает диалог");
+                //    break;
+                //case 3:
+                //    MessageBox.Show("Всплывает картинка");
+                //    break;
                 case 2:
-                    MessageBox.Show("Всплывает диалог");
-                    break;
-                case 3:
-                    MessageBox.Show("Всплывает картинка");
-                    break;
-                case 4:
                     CodifyInteraction();
                     break;
             }
@@ -81,34 +96,56 @@ namespace WindowsFormsApp1
         public void CodifyInteraction()
         {
             string[] result = Code.Trim('|').Split('|');
-
+            //Переделать Case1
             switch(result[0])
             {
                 case "1":
                     if (result[2] == "INP")
                     {
-                        foreach (TrigerData data in GlobalVariables.locations[Convert.ToInt32(result[1])].TrigerInputs)
-                        {
-                            if(data.PictureBoxData.Name == result[3])
-                            {
-                                data.active = result[4] == "0" ? false : true;
-                                break;
-                            }
-                        }
-                        return;
+                        changeActivity(GlobalVariables.locations[Convert.ToInt32(result[1])].TrigerInputs, result[3], result[4]);
                     }
                     else
                     {
-                        foreach (TrigerData data in GlobalVariables.locations[Convert.ToInt32(result[1])].TrigerCords)
-                        {
-                            if (data.PictureBoxData.Name == result[3])
-                            {
-                                data.active = result[4] == "0" ? false : true;
-                                break;
-                            }
-                        }
+                        changeActivity(GlobalVariables.locations[Convert.ToInt32(result[1])].TrigerCords, result[3], result[4]);
                     }
                     break;
+                case "2":
+
+                    //| id Действия | ПутьДоФайлаДиалога | ПутьДоФайлаСВыбором
+
+                    while (true)
+                    {
+
+                        GlobalVariables.dialogForm.ReadJson(result[1]);
+                        GlobalVariables.dialogForm.ShowDialog();
+
+                        if (result[2] != "NULL")
+                        {
+                            GlobalVariables.selectForm = new SelectForm(result[2]);
+                            GlobalVariables.selectForm.ShowDialog();
+                            result[1] = GlobalVariables.Temp;
+                            result[2] = "NULL";
+                        }
+                        else
+                        {
+                            break;
+                        }
+                     }
+
+
+                    break;
+            }
+
+        }
+        private void changeActivity(List<TrigerData> trigList, string PBname, string active)
+        {
+            foreach (TrigerData data in trigList)
+            {
+                if (data.PictureBoxData.Name == PBname)
+                {
+                    data.active = active == "0" ? false : true;
+                    break;
+                }
             }
         }
     }
