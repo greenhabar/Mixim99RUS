@@ -10,19 +10,18 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class ShowPicture : Form
+    public partial class EnterFileName : Form
     {
-        public ShowPicture()
+        public EnterFileName()
         {
             InitializeComponent();
         }
-        public ShowPicture(string path)
+        private void button2_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
-            this.BackgroundImage = Image.FromFile(path);
+            GlobalVariables.savefilename = textBox1.Text;
+            this.Close();
         }
-
-        private void Click(object sender, KeyEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }

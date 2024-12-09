@@ -40,6 +40,7 @@
             this.inputTriger1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.MovementTimer = new System.Windows.Forms.Timer(this.components);
+            this.Cigarete = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Col1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Col4)).BeginInit();
@@ -148,6 +149,11 @@
             this.MovementTimer.Interval = 1;
             this.MovementTimer.Tick += new System.EventHandler(this.MovementTimer_Tick);
             // 
+            // Cigarete
+            // 
+            this.Cigarete.Interval = 5000;
+            this.Cigarete.Tick += new System.EventHandler(this.SpriteCig);
+            // 
             // Scene
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,6 +175,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Name = "Scene";
             this.Text = "Col4";
+            this.Load += new System.EventHandler(this.Scene_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Игра_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Игра_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.Player)).EndInit();
@@ -197,5 +204,6 @@
         private System.Windows.Forms.PictureBox inputTriger1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Timer MovementTimer;
+        private System.Windows.Forms.Timer Cigarete;
     }
 }

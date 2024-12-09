@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -37,7 +38,7 @@ namespace WindowsFormsApp1
         {
             GlobalVariables.volume = true;
             GlobalVariables.player = new AudioPlayer();
-            GlobalVariables.player.Play(AppDomain.CurrentDomain.BaseDirectory + "Music\\MainMenu.wav");
+            GlobalVariables.player.Play(GlobalVariables.defaultpath + "Music\\MainMenu.wav");
             GlobalVariables.speed = 2;
         }
         private void Button1_Click(object sender, EventArgs e) // переход на форму запуска игры 
@@ -45,10 +46,10 @@ namespace WindowsFormsApp1
             this.Hide();
             introduction = new introduction();
             introduction.ShowDialog();
-            scene = new Scene();
+            scene = new Scene(GlobalVariables.defaultpath + "\\Default.dsfd", GlobalVariables.defaultpath+"Dialogs\\TMS1.json");
             scene.ShowDialog();
             this.Show();
-            GlobalVariables.player.Play(AppDomain.CurrentDomain.BaseDirectory + "Music\\MainMenu.wav");
+            GlobalVariables.player.Play(GlobalVariables.defaultpath + "Music\\MainMenu.wav");
         }
         private void Settings_Click(object sender, EventArgs e)
         {
@@ -56,6 +57,12 @@ namespace WindowsFormsApp1
         }
         private void button5_Click(object sender, EventArgs e) // выход из игры 
         {
+            DialogResult res = MessageBox.Show("Выйти?", "Вы действительно хотите уйти?", MessageBoxButtons.YesNo);
+            if(res == DialogResult.No)
+            {
+                return;
+            }
+
             Thread.Sleep(100);
             GlobalVariables.player.Stop();
             this.Close();

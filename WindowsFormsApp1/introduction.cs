@@ -57,12 +57,19 @@ namespace GameForm
             //DEPO = JsonConvert.DeserializeObject<List<string>>(json);
 
             DEPO = new List<string>();
-            DEPO.Add("Типа что-то");
-            DEPO.Add("Тото");
+            DEPO.Add("Мир встает на ноги, отряхивая себя, после недавних воин");
+            DEPO.Add("Наш мир давно разрушен, в моих глазах каждодневно отражается тлен и безысходность");
+            DEPO.Add("Отца забрали на войну. Позже, в наш дом пришло извещание, что отец безвести пропавший");
+            DEPO.Add("Через несколько дней, моя мама оставила записку:");
+            DEPO.Add(" ");
+            DEPO.Add("\"Позаботься об Олесе\"");
+
+            
         }
         private void button1_Click(object sender, EventArgs e)
         {
             button1.Hide();
+            button2.Show();
             Thread thread;
             foreach (Control depo in this.Controls)
             {
@@ -73,7 +80,6 @@ namespace GameForm
                 thread = new Thread(new ParameterizedThreadStart(ShowTitle));
                 thread.Start(depo);
             }
-            button2.Show();
         }
         private void ShowTitle(object o)
         {
@@ -82,7 +88,7 @@ namespace GameForm
             for (int i = 0; i < 255; i++)
             {
                 nowLab.ForeColor = Color.FromArgb(i, i, i);
-                Thread.Sleep(13);
+                Thread.Sleep(20);
             }
         }
         private void button2_Click(object sender, EventArgs e)

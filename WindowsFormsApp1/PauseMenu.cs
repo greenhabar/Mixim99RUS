@@ -41,7 +41,14 @@ namespace WindowsFormsApp1
         }
         private void Save_Click(object sender, EventArgs e)
         {
-
+            EnterFileName enter = new EnterFileName();
+            enter.ShowDialog();
+            if(GlobalVariables.savefilename == "")
+            {
+                return;
+            }
+            GlobalVariables.WorkWithJSON.Save(mother, GlobalVariables.savefilename);
+            MessageBox.Show("Сохранение", "Сохрание завершено");
         }
         private void Exit_Click(object sender, EventArgs e)
         {

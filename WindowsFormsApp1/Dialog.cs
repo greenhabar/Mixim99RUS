@@ -39,18 +39,18 @@ namespace WindowsFormsApp1
 
         public void ReadJson(string path)
         {
-
-            string PAth = "C:\\Users\\User\\Desktop\\⠀⠀⠀⠀\\Folders\\JsonWriterDialog\\TEST.json";
-
-            var FileData = File.ReadAllText(PAth);
+            var FileData = File.ReadAllText(path);
             Data = JsonConvert.DeserializeObject<List<DialogStr>>(FileData);
 
-            ShowDialog();
+            ShowDialogStr();
         }
-        public void ShowDialog()
+        public void ShowDialogStr()
         {
             ChName.Text = Data[i].Name;
-            pictureBox1.Image = Image.FromFile("Resources\\" + Data[i].Icon);
+            if (Data[i].Icon != "")
+            {
+                pictureBox1.Image = Image.FromFile(GlobalVariables.defaultpath + "Resources\\" + Data[i].Icon);
+            }
             richTextBox1.Text = Data[i].Dialogue;
             i++;
         }
@@ -64,12 +64,13 @@ namespace WindowsFormsApp1
 
         private void Dialog_KeyDown(object sender, KeyEventArgs e)
         {
-            if(i != Data.Count)
+            if(i != 2)
             {
-                ShowDialog();
+                ShowDialogStr();
             }
             else
             {
+                i = 0;
                 this.Close();
             }
         }
@@ -87,7 +88,7 @@ namespace WindowsFormsApp1
         {
             if (i != Data.Count)
             {
-                ShowDialog();
+                ShowDialogStr();
             }
             else
             {

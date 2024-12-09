@@ -27,14 +27,16 @@ namespace WindowsFormsApp1
     }
     public enum MovementState 
     { 
-        None, 
-        Up, 
-        Down, 
-        Left, 
+        None,
+        Up,
+        Down,
+        Left,
         Right 
     }
     public static class GlobalVariables
     {
+        public static string savefilename { get; set; } = "NewSave";
+        public static string defaultpath { get; set; } = AppDomain.CurrentDomain.BaseDirectory;
         public static string task { get; set; } = " - ";
         public static int locationId {  get; set; }
         public static int speed {  get; set; } 
@@ -43,10 +45,10 @@ namespace WindowsFormsApp1
         public static AudioPlayer player { get; set; }
         public static WorkWithJSON WorkWithJSON { get; set; }
         public static List<LocationData> locations { get; set; }
-        public static Dialog dialogForm { get; set; }
+        public static Dialog dialogForm { get; set; } = new Dialog();
         public static SelectForm selectForm { get; set; }
         public static int reputation { get; set; } = 0;
-
+        public static Scene mainscene { get; set; }
         public static string Temp { get; set; } = "NULL";
     }
 }

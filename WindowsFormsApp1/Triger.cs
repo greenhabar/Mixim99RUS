@@ -56,12 +56,6 @@ namespace WindowsFormsApp1
          * 
          */
         //DELETE
-        public Triger(PictureBox pic, int type)
-        {
-            this.pic = pic;
-            this.type = type;
-            active = true;
-        }
         public Triger(PictureBox pic, int type,bool active,string Code)
         {
             this.pic = pic;
@@ -79,15 +73,10 @@ namespace WindowsFormsApp1
             {
                 //Переделать под кодификатор
                 case 1: //загрузка локи
+                    GlobalVariables.WorkWithJSON.LocalSave(scene);
                     GlobalVariables.locationId = Convert.ToInt32(Code);
                     GlobalVariables.WorkWithJSON.LoadLocation(scene, GlobalVariables.locationId);
                     break;
-                //case 2:
-                //    MessageBox.Show("Всплывает диалог");
-                //    break;
-                //case 3:
-                //    MessageBox.Show("Всплывает картинка");
-                //    break;
                 case 2:
                     CodifyInteraction();
                     break;
@@ -96,6 +85,7 @@ namespace WindowsFormsApp1
         public void CodifyInteraction()
         {
             string[] result = Code.Trim('|').Split('|');
+            MessageBox.Show(result[0]);
             //Переделать Case1
             switch(result[0])
             {
@@ -111,31 +101,35 @@ namespace WindowsFormsApp1
                     break;
                 case "2":
 
-                    //| id Действия | ПутьДоФайлаДиалога | ПутьДоФайлаСВыбором
+                    //| id Действия | ПутьДоФайлаДиалога | ПутьДоФайлаСВыбором 
 
-                    while (true)
+                    if (result[1] == "1")
                     {
+                        this.active = false;
+                    }
 
-                        GlobalVariables.dialogForm.ReadJson(result[1]);
-                        GlobalVariables.dialogForm.ShowDialog();
-
-                        if (result[2] != "NULL")
-                        {
-                            GlobalVariables.selectForm = new SelectForm(result[2]);
-                            GlobalVariables.selectForm.ShowDialog();
-                            result[1] = GlobalVariables.Temp;
-                            result[2] = "NULL";
-                        }
-                        else
-                        {
-                            break;
-                        }
-                     }
-
+                    GlobalVariables.dialogForm.ReadJson(GlobalVariables.defaultpath+"\\Dialogs\\"+result[2]);
+                    GlobalVariables.dialogForm.Show();
 
                     break;
-            }
+                case "3":
 
+                    //Музыка: | id Действия | id действия с музлом(стоп/новый трек) | ПутьДоФайлаМузыки (| Новый поток или замена потоков? | )
+                    if (result[1] == "0")
+                    {
+                        //стоп мелодии
+                        GlobalVariables.player.Stop();
+                        return;
+                    }
+
+                    //GlobalVariables.player.Play(GlobalVariables.defaultpath + "\\Music\\" + result[2]);
+                    GlobalVariables.player.AddSound(GlobalVariables.defaultpath + "\\Music\\" + result[2]);
+
+                    
+                    //GlobalVariables.defaultpath + "\\Music\\" + result[2];
+                        
+                    break;
+            }
         }
         private void changeActivity(List<TrigerData> trigList, string PBname, string active)
         {

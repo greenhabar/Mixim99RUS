@@ -85,6 +85,20 @@ namespace WindowsFormsApp1
             };
         }
         //Get'ер Блок
+        public System.Drawing.Bitmap GetCigSprite()
+        {
+            if(currentCharacter == CharacterType.Sister)
+            {
+                return GetCurrentSprite(MovementState.None);
+            }
+            if(currentLocation == LocationType.Home)
+            {
+                return Properties.Resources.PHIFSigaret;
+            }
+            
+
+            return Properties.Resources.TestBox;
+        }
         public System.Drawing.Bitmap GetCurrentSprite(MovementState mv)
         {
             SpriteState state = SpriteState.IdleFront;

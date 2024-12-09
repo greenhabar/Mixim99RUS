@@ -33,19 +33,23 @@ namespace WindowsFormsApp1
         public List<Triger> TrigerInput;//по нажатию
         public List<Triger> TrigerCords;//по коорднате
 
+        bool dialogCheck = false;
+
         MovementState moveCheck;
 
-        public Scene()
-        {
-            InitializeComponent();
-            InitializeForm();
-            InitializeDefaultSettings();
-        }
         public Scene(string path)
         {
             InitializeComponent();
             InitializeForm();
             GlobalVariables.WorkWithJSON.Read(this,path);
+        }
+        public Scene(string path, string dialog)
+        {
+            InitializeComponent();
+            InitializeForm();
+            dialogCheck = true;
+            GlobalVariables.WorkWithJSON.Read(this, path);
+            GlobalVariables.dialogForm.ReadJson(dialog);
         }
 
         void InitializeForm()
@@ -53,6 +57,10 @@ namespace WindowsFormsApp1
             GlobalVariables.WorkWithJSON = new WorkWithJSON();
             GlobalVariables.dialogForm = new Dialog();
             GlobalVariables.selectForm = new SelectForm();
+
+            Colissions = new List<PictureBox>();
+            TrigerCords = new List<Triger>();
+            TrigerInput = new List<Triger>();
 
             this.DoubleBuffered = true;
 
@@ -62,20 +70,10 @@ namespace WindowsFormsApp1
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 
-
             this.BackGroundPath = "\\Resources\\ToiletTest.jpg";
             this.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + this.BackGroundPath);
         }
-        void InitializeDefaultSettings()
-        {
-            GlobalVariables.inventory = new List<string>();
-            GlobalVariables.locationId = 0;
-            GlobalVariables.locations = new List<LocationData>();
 
-            Colissions = new List<PictureBox> { Col4, Col2, Col3, Col4, Col5, Col6 }; //JSON done
-            TrigerInput = new List<Triger> { new Triger(inputTriger1, 1, true, "null") };
-            TrigerCords = new List<Triger> { };
-        }
 
         //Check Блок
         private bool CheckCollision(PictureBox entity)
@@ -89,6 +87,10 @@ namespace WindowsFormsApp1
             {
                 if (Player.Bounds.IntersectsWith(tr.pic.Bounds))
                 {
+                    if(tr.active == false)
+                    { return; }
+                    MovementTimer.Stop();
+                    moveCheck = MovementState.None;
                     tr.ShowEvent(this);
                     break;
                 }
@@ -136,7 +138,11 @@ namespace WindowsFormsApp1
                 }
             }
         }
-
+        public void SetMov()
+        {
+            Player.Image = playerSprites.GetCurrentSprite(moveCheck);
+            MovementTimer.Start();
+        }
         //Input блок
         private void Игра_KeyDown(object sender, KeyEventArgs e)
         {
@@ -166,29 +172,25 @@ namespace WindowsFormsApp1
                     break;
                 case Keys.Up:
                     moveCheck = MovementState.Up;
+                    SetMov();
                     break;
                 case Keys.Down:
                     moveCheck = MovementState.Down;
+                    SetMov();
                     break;
                 case Keys.Left:
                     moveCheck = MovementState.Left;
+                    SetMov();
                     break;
                 case Keys.Right:
                     moveCheck = MovementState.Right;
+                    SetMov();
                     break;
-                case Keys.I:
-                    GlobalVariables.WorkWithJSON.SaveData(this,"ToiletTest");
+                case Keys.Y:
+                    MessageBox.Show("Y:" + Player.Top.ToString() + "\nX:" + Player.Right.ToString());
                     break;
-                case Keys.G:
-                    GlobalVariables.WorkWithJSON.ReadScene(this, "ToiletTest");
-                    break;
-                //case Keys.T:
-                //    GlobalVariables.WorkWithJSON.DEBUG_Save(this, "bruh");
-                //    break;
 
             }
-            Player.Image = playerSprites.GetCurrentSprite(moveCheck);
-            MovementTimer.Start();
         }
         private void Игра_KeyUp(object sender, KeyEventArgs e)
         {
@@ -196,7 +198,6 @@ namespace WindowsFormsApp1
             {
                 GlobalVariables.speed = 2;
             }
-
             if (e.KeyCode == Keys.Left && moveCheck == MovementState.Left)
             {
                 this.StopMovement();
@@ -222,6 +223,7 @@ namespace WindowsFormsApp1
         {
             moveCheck = MovementState.None;
             Player.Image = playerSprites.GetCurrentSprite(moveCheck);
+            Cigarete.Start();
         }
 
         //PauseInput Блок
@@ -233,6 +235,17 @@ namespace WindowsFormsApp1
         private void MovementTimer_Tick(object sender, EventArgs e)
         {
             MovePlayer(moveCheck);
+        }
+
+        private void SpriteCig(object sender, EventArgs e)
+        {
+            Player.Image = playerSprites.GetCigSprite();
+            Cigarete.Stop();
+        }
+
+        private void Scene_Load(object sender, EventArgs e)
+        {
+            GlobalVariables.dialogForm.ShowDialog();
         }
     }
 }
