@@ -52,7 +52,7 @@ namespace GameForm
         private void InitializeParams(string path)
         {
             button2.Hide();
-            GlobalVariables.player.Play("C:\\Users\\User\\source\\repos\\Mixim99RUS\\WindowsFormsApp1\\Music\\MainMenu.wav");
+            GlobalVariables.player.Play(AppDomain.CurrentDomain.BaseDirectory + "Music\\MainMenu.wav");
             //string json = File.ReadAllText(path);
             //DEPO = JsonConvert.DeserializeObject<List<string>>(json);
 
@@ -90,9 +90,4 @@ namespace GameForm
             this.Close();
         }
     }
-
-
-
-
-
 }

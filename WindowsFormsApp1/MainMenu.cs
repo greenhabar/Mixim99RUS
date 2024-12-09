@@ -37,7 +37,7 @@ namespace WindowsFormsApp1
         {
             GlobalVariables.volume = true;
             GlobalVariables.player = new AudioPlayer();
-            GlobalVariables.player.Play("C:\\Users\\User\\source\\repos\\Mixim99RUS\\WindowsFormsApp1\\Music\\MainMenu.wav");
+            GlobalVariables.player.Play(AppDomain.CurrentDomain.BaseDirectory + "Music\\MainMenu.wav");
             GlobalVariables.speed = 2;
         }
         private void Button1_Click(object sender, EventArgs e) // переход на форму запуска игры 
@@ -48,7 +48,7 @@ namespace WindowsFormsApp1
             scene = new Scene();
             scene.ShowDialog();
             this.Show();
-            GlobalVariables.player.Play("C:\\Users\\User\\source\\repos\\Mixim99RUS\\WindowsFormsApp1\\Music\\MainMenu.wav");
+            GlobalVariables.player.Play(AppDomain.CurrentDomain.BaseDirectory + "Music\\MainMenu.wav");
         }
         private void Settings_Click(object sender, EventArgs e)
         {
