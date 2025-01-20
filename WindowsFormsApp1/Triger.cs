@@ -121,12 +121,16 @@ namespace WindowsFormsApp1
                         GlobalVariables.player.Stop();
                         return;
                     }
-
-                    //GlobalVariables.player.Play(GlobalVariables.defaultpath + "\\Music\\" + result[2]);
-                    GlobalVariables.player.AddSound(GlobalVariables.defaultpath + "\\Music\\" + result[2]);
-
-                    
-                    //GlobalVariables.defaultpath + "\\Music\\" + result[2];
+                    if(result[1] == "1")
+                    {
+                        GlobalVariables.player.Stop();
+                        GlobalVariables.player.Play(GlobalVariables.defaultpath + "\\Music\\" + result[2]);
+                        return;
+                    }
+                    if (result[1] == "2")
+                    {
+                        GlobalVariables.player.AddSound(GlobalVariables.defaultpath + "\\Music\\" + result[2]);
+                    }
                         
                     break;
             }

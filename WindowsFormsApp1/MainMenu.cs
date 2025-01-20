@@ -44,8 +44,10 @@ namespace WindowsFormsApp1
         private void Button1_Click(object sender, EventArgs e) // переход на форму запуска игры 
         {
             this.Hide();
+
             introduction = new introduction();
             introduction.ShowDialog();
+
             scene = new Scene(GlobalVariables.defaultpath + "\\Default.dsfd", GlobalVariables.defaultpath+"Dialogs\\TMS1.json");
             scene.ShowDialog();
             this.Show();

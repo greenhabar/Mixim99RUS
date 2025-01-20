@@ -142,6 +142,7 @@ namespace WindowsFormsApp1
         {
             Player.Image = playerSprites.GetCurrentSprite(moveCheck);
             MovementTimer.Start();
+            Cigarete.Stop();
         }
         //Input блок
         private void Игра_KeyDown(object sender, KeyEventArgs e)

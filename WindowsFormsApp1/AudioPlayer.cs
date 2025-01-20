@@ -119,23 +119,23 @@ namespace WindowsFormsApp1
 
             if (addPlaybackStopped)
             {
-                waveOut.PlaybackStopped += WaveOut_PlaybackStopped;
+                //waveOut.PlaybackStopped += WaveOut_PlaybackStopped;
             }
         }
 
-        private void WaveOut_PlaybackStopped(object sender, StoppedEventArgs e)
-        {
-            if (GlobalVariables.player.IsPlaying && reader != null)
-            {
-                MessageBox.Show(reader.ToString());
-                reader.Dispose();
-                reader = null;
-                reader = new Mp3FileReader(paths);
-                reader.Position = 0;
-
-                waveOut.Play();
-            }
-        }
+        //private void WaveOut_PlaybackStopped(object sender, StoppedEventArgs e)
+        //{
+        //    if (GlobalVariables.player.IsPlaying && reader != null)
+        //    {
+        //        MessageBox.Show(reader.ToString());
+        //        reader.Dispose();
+        //        reader = null;
+        //        reader = new Mp3FileReader(paths);
+        //        reader.Position = 0;
+        //        waveOut.Init(reader);
+        //        waveOut.Play();
+        //    }
+        //}
 
         public void Clear()
         {
